@@ -19,11 +19,6 @@ public class ObjectControllerScript : MonoBehaviour
     private float currSliderVal;
     private float prevSliderVal = 0;
     private float originalHeight;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

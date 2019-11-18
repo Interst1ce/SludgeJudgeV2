@@ -14,6 +14,7 @@ public class ARController : MonoBehaviour {
     Anchor anchor2;
     public GameObject sceneObject;
     bool sceneSpawned;
+    public static bool canSwap = false;
 
     List<Anchor> anchors = new List<Anchor>();
 
@@ -23,7 +24,7 @@ public class ARController : MonoBehaviour {
         //sceneObject.transform.localScale = new Vector3(0.25f,0.25f,0.25f);
     }
 
-    void SwapAnchor(TrackableHit hit) {
+    public void SwapAnchor(TrackableHit hit) {
         if(anchor1 != null) {
             anchor2 = hit.Trackable.CreateAnchor(hit.Pose);
             sceneObject.transform.position = hit.Pose.position;
@@ -57,12 +58,15 @@ public class ARController : MonoBehaviour {
         TrackableHit hit;
         TrackableHitFlags raycastFilter = TrackableHitFlags.PlaneWithinPolygon;
 
+        //TODO Fix raycasts being blocked by UI
+        //TODO Fix Groundplane being above the ground
+
         if(Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit)) {
             if((hit.Trackable is DetectedPlane) && (Vector3.Dot(Camera.main.transform.position - hit.Pose.position, hit.Pose.rotation * Vector3.up) < 0)) {
                 return;
             } else {
                 if (sceneSpawned) {
-                    SwapAnchor(hit);
+                    if (canSwap) SwapAnchor(hit);
                 } else {
                     if (hit.Trackable is DetectedPlane) {
                         DetectedPlane detectedPlane = hit.Trackable as DetectedPlane;
