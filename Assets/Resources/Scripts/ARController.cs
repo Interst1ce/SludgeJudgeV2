@@ -40,6 +40,7 @@ public class ARController : MonoBehaviour {
             sceneObject.transform.parent = anchor1.transform;
             Destroy(anchor2.gameObject);
         }
+        canSwap = false;
     }
 
     void Update() {
@@ -58,10 +59,16 @@ public class ARController : MonoBehaviour {
         TrackableHit hit;
         TrackableHitFlags raycastFilter = TrackableHitFlags.PlaneWithinPolygon;
 
-        //TODO Fix raycasts being blocked by UI
-        //TODO Fix Groundplane being above the ground
-
         if(Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit)) {
+
+            Transform rootTransform = transform.parent;
+            Vector3 hitPos = hit.Pose.position;
+
+            if(rootTransform != null) {
+                hitPos.Scale(rootTransform.transform.localScale);
+                rootTransform.localPosition = hitPos * -1;
+            }
+
             if((hit.Trackable is DetectedPlane) && (Vector3.Dot(Camera.main.transform.position - hit.Pose.position, hit.Pose.rotation * Vector3.up) < 0)) {
                 return;
             } else {
@@ -73,7 +80,7 @@ public class ARController : MonoBehaviour {
                         if (detectedPlane.PlaneType == DetectedPlaneType.HorizontalUpwardFacing) {
                             anchor1 = hit.Trackable.CreateAnchor(hit.Pose);
                             sceneObject.SetActive(true);
-                            sceneObject.transform.position = hit.Pose.position;
+                            sceneObject.transform.position = new Vector3(hit.Pose.position.x, sceneObject.transform.position.y, hit.Pose.position.z);
                             sceneObject.transform.rotation = hit.Pose.rotation;
                             sceneObject.transform.Rotate(0,180,0,Space.Self);
                             sceneObject.transform.parent = anchor1.transform; 

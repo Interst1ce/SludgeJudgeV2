@@ -10,7 +10,6 @@ public class ResizeScene : MonoBehaviour {
 
     public void Init() {
         oldTransform = scene.transform;
-        ARController.canSwap = true;
     }
 
     public void UpdateScale(float scaleMult) {
@@ -21,6 +20,10 @@ public class ResizeScene : MonoBehaviour {
     public void UpdateHeight(float height) {
         scene.transform.localPosition = new Vector3(scene.transform.localPosition.x,height,scene.transform.localPosition.z);
 
+    }
+
+    public void StartSwap() {
+        ARController.canSwap = true;
     }
 
     public void CancelSwap() {
