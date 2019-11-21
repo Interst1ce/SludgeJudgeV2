@@ -80,6 +80,7 @@ public class ARController : MonoBehaviour {
                         if (detectedPlane.PlaneType == DetectedPlaneType.HorizontalUpwardFacing) {
                             anchor1 = hit.Trackable.CreateAnchor(hit.Pose);
                             sceneObject.SetActive(true);
+                            this.transform.GetComponent<StoryManager>().PlayIntro(); 
                             sceneObject.transform.position = new Vector3(hit.Pose.position.x, sceneObject.transform.position.y, hit.Pose.position.z);
                             sceneObject.transform.rotation = hit.Pose.rotation;
                             sceneObject.transform.Rotate(0,180,0,Space.Self);

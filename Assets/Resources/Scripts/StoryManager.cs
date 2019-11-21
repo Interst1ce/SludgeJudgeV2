@@ -26,11 +26,13 @@ public class StoryManager : MonoBehaviour {
     public int currentStep;
     private bool introPlayed = false;
     private bool finished = false;
-    public int pauseDelay=0;
+    public int pauseDelay = 0;
     [SerializeField]
     public AudioClip introAudio;
     [SerializeField]
     public AudioClip outroAudio;
+    [SerializeField]
+    public AudioClip missTapAudio;
     [SerializeField]
     public SoundEffect backgroundAudioStart;
 
@@ -47,9 +49,7 @@ public class StoryManager : MonoBehaviour {
         [SerializeField]
         public SoundEffect[] soundEffects;
         [SerializeField]
-        public Highlight[] highlights;
-        [SerializeField]
-        public AudioClip missTap;
+        public GlowObjectCmd[] highlightTargets;
         [SerializeField]
         public int stepOrder;
         //These variables are for object manipulation using a slider, not being used right now and might be replaced with a two-axis dragging system
@@ -70,7 +70,7 @@ public class StoryManager : MonoBehaviour {
         [SerializeField]
         public bool hasQuestion;
         [SerializeField]
-        public Question question;        
+        public Question question;
     }
 
     [System.Serializable]
@@ -107,14 +107,6 @@ public class StoryManager : MonoBehaviour {
         public float delay;
     }
 
-    [System.Serializable]
-    public class Highlight : object {
-        [SerializeField]
-        public AnimationClip highlightAnim;
-        [SerializeField]
-        public GameObject highlightTarget;
-    }
-
     public void Awake() {
         qAPanel = GameObject.Find("QAPanel");
         audioSource = GetComponent<AudioSource>();
@@ -127,36 +119,25 @@ public class StoryManager : MonoBehaviour {
     }
 
     public void Update() {
-        if (currentStep == steps.Length && !audioSource.isPlaying && finished == false && !qAPanel.activeSelf ) {
+        if (currentStep == steps.Length && !audioSource.isPlaying && finished == false && !qAPanel.activeSelf) {
             finished = true;
-            //if (outroAudio != null)
-            //{
-            if (outroAudio != null)
-            {
+            if (outroAudio != null) {
                 PlayAudio(outroAudio);
-                if (!audioSource.isPlaying)
-                {
+                if (!audioSource.isPlaying) {
                     CallPause();
                 }
-            }
-            else{
+            } else {
                 StartCoroutine(ExecuteAfterTime(pauseDelay));
             }
-
-            //}
-           // else
-            //{
-            //    CallPause();
-           // }
         }
         if (!audioSource.isPlaying && introPlayed) {
-            if(currentStep <= steps.Length - 1) {
-                if (steps[currentStep].highlights != null) {
-                    foreach(Highlight highlight in steps[currentStep].highlights) {
-                        highlight.highlightTarget.GetComponent<Animator>().Play(highlight.highlightAnim.name);
+            if (currentStep <= steps.Length - 1) {
+                if (steps[currentStep].highlightTargets != null) {
+                    foreach (GlowObjectCmd highlight in steps[currentStep].highlightTargets) {
+                        highlight.StartCoroutine("GlowPulse");
                     }
                 }
-            }   
+            }
         }
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
@@ -165,15 +146,15 @@ public class StoryManager : MonoBehaviour {
                 if (Physics.Raycast(ray,out hit)) {
                     //GameObject.Find("TextMeshPro Text").GetComponent<TextMeshProUGUI>().text = hit.transform.gameObject.name;
                     foreach (Step elem in steps) {
-                        foreach(Target target in elem.targets) {
+                        foreach (Target target in elem.targets) {
                             if (hit.transform.gameObject == target.objectTarget && currentStep == elem.stepOrder && !audioSource.isPlaying && !audioSource.loop) {
                                 currentStep = target.targetStep;
                                 AudioSource[] audioSources = gameObject.GetComponents<AudioSource>();
                                 for (int j = 1; j < audioSources.Length; j++) {
                                     Destroy(audioSources[j]);
                                 }
-                                foreach (Highlight highlight in elem.highlights) {
-                                    highlight.highlightTarget.GetComponent<Animator>().Play("New State");
+                                foreach (GlowObjectCmd highlight in elem.highlightTargets) {
+                                    highlight.StartCoroutine("GlowPulse");
                                 }
                                 if (target.targetAnim != null) {
                                     //play the animation for the step
@@ -216,7 +197,7 @@ public class StoryManager : MonoBehaviour {
                                     CallQuestion(0);
                                 }
                             } else if (hit.transform.gameObject != target.objectTarget && currentStep == elem.stepOrder && !audioSource.isPlaying) {
-                                PlayAudio(elem.missTap);
+                                PlayAudio(missTapAudio);
                             }
                         }
                     }
@@ -225,8 +206,7 @@ public class StoryManager : MonoBehaviour {
         }
     }
 
-    IEnumerator ExecuteAfterTime(float time)
-    {
+    IEnumerator ExecuteAfterTime(float time) {
         yield return new WaitForSeconds(time);
         //Invoke("CallPause", outroAudio.length);
         CallPause();
@@ -248,7 +228,7 @@ public class StoryManager : MonoBehaviour {
     }
 
     public void PlaySoundEffects(SoundEffect[] effects) {
-        foreach(SoundEffect effect in effects) {
+        foreach (SoundEffect effect in effects) {
             AudioSource audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.clip = effect.soundEffect;
             if (effect.loop) {
@@ -266,14 +246,14 @@ public class StoryManager : MonoBehaviour {
         if (effect.delay == 0) {
             audioSource.Play();
         } else {
-            StartCoroutine(DelaySoundEffect(audioSource, effect.delay));
+            StartCoroutine(DelaySoundEffect(audioSource,effect.delay));
         }
     }
 
-    IEnumerator DelaySoundEffect(AudioSource source, float delay) {
+    IEnumerator DelaySoundEffect(AudioSource source,float delay) {
         float elapsedTime = 0;
 
-        while(elapsedTime < delay) {
+        while (elapsedTime < delay) {
             elapsedTime += Time.deltaTime;
             yield return null;
         }
