@@ -26,6 +26,7 @@ public class StoryManager : MonoBehaviour {
     public int currentStep;
     private bool introPlayed = false;
     private bool finished = false;
+    private bool init = false;
     public int pauseDelay = 0;
     [SerializeField]
     public AudioClip introAudio;
@@ -130,11 +131,12 @@ public class StoryManager : MonoBehaviour {
                 StartCoroutine(ExecuteAfterTime(pauseDelay));
             }
         }
-        if (!audioSource.isPlaying && introPlayed) {
+        if (!audioSource.isPlaying && introPlayed && !init) {
             if (currentStep <= steps.Length - 1) {
                 if (steps[currentStep].highlightTargets != null) {
                     foreach (GlowObjectCmd highlight in steps[currentStep].highlightTargets) {
                         highlight.StartCoroutine("GlowPulse");
+                        init = true;
                     }
                 }
             }

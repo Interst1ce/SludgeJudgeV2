@@ -23,20 +23,23 @@ public class GlowObjectCmd : MonoBehaviour {
         GlowController.RegisterObject(this);
     }
 
-    private void OnMouseEnter() {
+    private void TurnOn() {
         _targetColor = GlowColor;
         enabled = true;
     }
 
-    private void OnMouseExit() {
+    private void TurnOff() {
         _targetColor = Color.black;
         enabled = true;
     }
 
     IEnumerator GlowPulse() {
-        _targetColor = GlowColor;
-        yield return new WaitForSeconds(1);
-        _targetColor = Color.black;
+        Debug.Log("Turning glow on");
+        TurnOn();
+        yield return new WaitForSecondsRealtime(1);
+        Debug.Log("Turning glow off");
+        TurnOff();
+        yield return new WaitForSecondsRealtime(1);
         StartCoroutine("GlowPulse");
     }
 
