@@ -34,10 +34,10 @@ public class GlowObjectCmd : MonoBehaviour {
     }
 
     IEnumerator GlowPulse() {
-        Debug.Log("Turning glow on");
+        //Debug.Log("Turning glow on");
         TurnOn();
         yield return new WaitForSecondsRealtime(1);
-        Debug.Log("Turning glow off");
+        //Debug.Log("Turning glow off");
         TurnOff();
         yield return new WaitForSecondsRealtime(1);
         StartCoroutine("GlowPulse");

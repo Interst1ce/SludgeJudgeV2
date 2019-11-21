@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField]
     GameObject[] toToggle;
     [SerializeField]
-    GameObject subMenu;
+    GameObject[] subMenus;
 
     TextMeshProUGUI chapterTitle;
 
@@ -28,12 +28,12 @@ public class PauseMenu : MonoBehaviour {
         }
     }
 
-    public void ToggleSubMenu() {
+    public void ToggleSubMenu(int index) {
         foreach (GameObject gameObject in toToggle) {
             if (gameObject.name == "PausePanel") {
                 gameObject.SetActive(!gameObject.activeSelf);
             }
         }
-        subMenu.SetActive(!subMenu.activeSelf);
+        subMenus[index].SetActive(!subMenus[index].activeSelf);
     }
 }

@@ -141,6 +141,10 @@ public class StoryManager : MonoBehaviour {
                 }
             }
         }
+
+        //TODO update to allow for calling of functions from other scripts
+        //TODO update to be able to play multiple animations for different objects simultaneously
+
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
@@ -160,7 +164,7 @@ public class StoryManager : MonoBehaviour {
                                 }
                                 if (target.targetAnim != null) {
                                     //play the animation for the step
-                                    //maybe update for next sprint multiple animations to play in sequence
+                                    
                                     hit.transform.gameObject.GetComponent<Animator>().Play(target.targetAnim.name);
                                 }
                                 if (target.targetAudio != null) {
@@ -245,11 +249,12 @@ public class StoryManager : MonoBehaviour {
         if (effect.loop) {
             audioSource.loop = true;
         }
-        if (effect.delay == 0) {
+        audioSource.PlayDelayed(effect.delay);
+        /*if (effect.delay == 0) {
             audioSource.Play();
         } else {
             StartCoroutine(DelaySoundEffect(audioSource,effect.delay));
-        }
+        }*/
     }
 
     IEnumerator DelaySoundEffect(AudioSource source,float delay) {
