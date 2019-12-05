@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -134,7 +133,7 @@ public class StoryManager : MonoBehaviour {
                 StartCoroutine(ExecuteAfterTime(pauseDelay));
             }
         }
-        if (!audioSource.isPlaying && introPlayed && !init) {
+        if (!audioSource.isPlaying && introPlayed) {
             if (currentStep <= steps.Count - 1) {
                 if (steps[currentStep].targets[0].objectTarget.GetComponent<GlowObjectCmd>() != null) {
                     steps[currentStep].targets[0].objectTarget.GetComponent<GlowObjectCmd>().StartCoroutine("GlowPulse");
