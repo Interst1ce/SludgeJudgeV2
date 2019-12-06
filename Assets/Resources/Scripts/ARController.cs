@@ -45,7 +45,7 @@ public class ARController : MonoBehaviour {
 
     void Update() {
 
-        Debug.Log(anchors.Count);
+        //Debug.Log(anchors.Count);
 
         if (Session.Status != SessionStatus.Tracking) {
             Screen.sleepTimeout = SleepTimeout.SystemSetting;
@@ -61,6 +61,8 @@ public class ARController : MonoBehaviour {
 
         if(Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit)) {
 
+            //Debug.Log("Raycast");
+
             Transform rootTransform = transform.parent;
             Vector3 hitPos = hit.Pose.position;
 
@@ -73,21 +75,24 @@ public class ARController : MonoBehaviour {
                 return;
             } else {
                 if (sceneSpawned) {
-                    if (canSwap) SwapAnchor(hit);
-                } else {
-                    if (hit.Trackable is DetectedPlane) {
-                        DetectedPlane detectedPlane = hit.Trackable as DetectedPlane;
-                        if (detectedPlane.PlaneType == DetectedPlaneType.HorizontalUpwardFacing) {
-                            anchor1 = hit.Trackable.CreateAnchor(hit.Pose);
-                            sceneObject.SetActive(true);
-                            this.transform.GetComponent<StoryManager>().PlayIntro(); 
-                            sceneObject.transform.position = new Vector3(hit.Pose.position.x, sceneObject.transform.position.y, hit.Pose.position.z);
-                            sceneObject.transform.rotation = hit.Pose.rotation;
-                            sceneObject.transform.Rotate(0,180,0,Space.Self);
-                            sceneObject.transform.parent = anchor1.transform; 
-                        }
+                    if (canSwap) {
+                        SwapAnchor(hit);
                     }
+                } else {
                     sceneSpawned = true;
+                    canSwap = false;
+                    //Debug.Log("Ground plane hit");
+                    DetectedPlane detectedPlane = hit.Trackable as DetectedPlane;
+                    if (detectedPlane.PlaneType == DetectedPlaneType.HorizontalUpwardFacing) {
+                        anchor1 = hit.Trackable.CreateAnchor(hit.Pose);
+                        sceneObject.SetActive(true);
+                        transform.GetComponent<StoryManager>().PlayIntro();
+                        sceneObject.transform.position = new Vector3(hit.Pose.position.x,sceneObject.transform.position.y,hit.Pose.position.z);
+                        sceneObject.transform.rotation = hit.Pose.rotation;
+                        sceneObject.transform.Rotate(0,180,0,Space.Self);
+                        sceneObject.transform.parent = anchor1.transform;
+                        //Debug.Log("Scene object activated and placed at hit position");
+                    }
                 }
             }
         }

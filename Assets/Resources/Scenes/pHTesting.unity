@@ -395,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &561119654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,6 +1531,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1967661521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3708637776802717145, guid: a579828f8802aca4882cee7bb8c23e9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3708637776207269819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &1967661530
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967661521}
+  m_Enabled: 1
 --- !u!1 &2027138479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 530139537363061082, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
@@ -1711,17 +1725,17 @@ PrefabInstance:
     - target: {fileID: 3708840349860105864, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3708840349860105864, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3708840349860105864, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
@@ -3358,6 +3372,21 @@ PrefabInstance:
     - target: {fileID: 3708785095353379234, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722142345935701810, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722142345935701810, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722142345935701810, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

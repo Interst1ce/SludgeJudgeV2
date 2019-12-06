@@ -234,12 +234,26 @@ public class StoryManager : MonoBehaviour {
     }
 
     public void PlayAudio(AudioClip audio) {
-        audioSource.clip = audio;
-        audioSource.Play();
+        if(audio != null) {
+            audioSource.clip = audio;
+            audioSource.Play();
+        }
     }
 
     public void PlaySoundEffects(SoundEffect[] effects) {
         foreach (SoundEffect effect in effects) {
+            if(effect != null) {
+                AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+                audioSource.clip = effect.soundEffect;
+                if (effect.loop) {
+                    audioSource.loop = true;
+                }
+                audioSource.PlayDelayed(effect.delay);
+            }
+        }
+    }
+    public void PlaySoundEffects(SoundEffect effect) {
+        if(effect != null) {
             AudioSource audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.clip = effect.soundEffect;
             if (effect.loop) {
@@ -247,14 +261,6 @@ public class StoryManager : MonoBehaviour {
             }
             audioSource.PlayDelayed(effect.delay);
         }
-    }
-    public void PlaySoundEffects(SoundEffect effect) {
-        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.clip = effect.soundEffect;
-        if (effect.loop) {
-            audioSource.loop = true;
-        }
-        audioSource.PlayDelayed(effect.delay);
         /*if (effect.delay == 0) {
             audioSource.Play();
         } else {
