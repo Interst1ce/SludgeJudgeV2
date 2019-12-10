@@ -77,7 +77,7 @@ public class ARController : MonoBehaviour {
                 if (sceneSpawned) {
                     if (canSwap) {
                         SwapAnchor(hit);
-                    }
+                    } else return;
                 } else {
                     sceneSpawned = true;
                     canSwap = false;

@@ -156,9 +156,10 @@ public class StoryManager : MonoBehaviour {
                             if (hit.transform.gameObject == target.objectTarget && currentStep == steps.IndexOf(elem) && !audioSource.isPlaying && !audioSource.loop) {
                                 currentStep = target.targetStep;
                                 AudioSource[] audioSources = gameObject.GetComponents<AudioSource>();
-                                foreach(AudioSource audioSource in audioSources) {
+                                foreach (AudioSource audioSource in audioSources) {
                                     Destroy(audioSource);
                                 }
+                                StopCoroutine("GlowPulse");
                                 GlowObjectCmd glow = target.objectTarget.GetComponent<GlowObjectCmd>();
                                 if (glow != null) glow.StartCoroutine("GlowPulse");
                                 if (target.targetAnim != null) {
