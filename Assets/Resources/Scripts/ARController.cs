@@ -24,23 +24,11 @@ public class ARController : MonoBehaviour {
         //sceneObject.transform.localScale = new Vector3(0.25f,0.25f,0.25f);
     }
 
-    public void SwapAnchor(TrackableHit hit) {
-        if(anchor1 != null) {
-            anchor2 = hit.Trackable.CreateAnchor(hit.Pose);
-            sceneObject.transform.position = hit.Pose.position;
-            sceneObject.transform.rotation = hit.Pose.rotation;
-            sceneObject.transform.Rotate(0,180,0,Space.Self);
-            sceneObject.transform.parent = anchor2.transform;
-            Destroy(anchor1.gameObject);
-        } else {
-            anchor1 = hit.Trackable.CreateAnchor(hit.Pose);
-            sceneObject.transform.position = hit.Pose.position;
-            sceneObject.transform.rotation = hit.Pose.rotation;
-            sceneObject.transform.Rotate(0,180,0,Space.Self);
-            sceneObject.transform.parent = anchor1.transform;
-            Destroy(anchor2.gameObject);
+    void RootPosUpdate(Transform rootTransform, Vector3 hitPos) {
+        if (rootTransform != null) {
+            hitPos.Scale(rootTransform.transform.localScale);
+            rootTransform.localPosition = new Vector3(0,hitPos.y * -1,0);
         }
-        canSwap = false;
     }
 
     void Update() {
@@ -66,22 +54,18 @@ public class ARController : MonoBehaviour {
             Transform rootTransform = transform.parent;
             Vector3 hitPos = hit.Pose.position;
 
-            if(rootTransform != null) {
-                hitPos.Scale(rootTransform.transform.localScale);
-                rootTransform.localPosition = hitPos * -1;
-            }
-
             if((hit.Trackable is DetectedPlane) && (Vector3.Dot(Camera.main.transform.position - hit.Pose.position, hit.Pose.rotation * Vector3.up) < 0)) {
                 return;
             } else {
                 if (sceneSpawned) {
                     if (canSwap) {
-                        SwapAnchor(hit);
+                        RootPosUpdate(rootTransform, hitPos);
                     } else return;
                 } else {
                     sceneSpawned = true;
                     canSwap = false;
                     //Debug.Log("Ground plane hit");
+                    RootPosUpdate(rootTransform,hitPos);
                     DetectedPlane detectedPlane = hit.Trackable as DetectedPlane;
                     if (detectedPlane.PlaneType == DetectedPlaneType.HorizontalUpwardFacing) {
                         anchor1 = hit.Trackable.CreateAnchor(hit.Pose);

@@ -141,10 +141,6 @@ public class StoryManager : MonoBehaviour {
             }
         }
 
-        //TODO update to allow for calling of functions from other scripts
-        //TODO update to be able to play multiple animations for different objects simultaneously
-        //TODO update to play multiple animations in sequence
-
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
