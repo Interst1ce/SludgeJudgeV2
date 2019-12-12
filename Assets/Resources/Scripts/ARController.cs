@@ -27,7 +27,7 @@ public class ARController : MonoBehaviour {
     void RootPosUpdate(Transform rootTransform, Vector3 hitPos) {
         if (rootTransform != null) {
             hitPos.Scale(rootTransform.transform.localScale);
-            rootTransform.localPosition = new Vector3(0,hitPos.y * -1,0);
+            rootTransform.localPosition = hitPos * -1;
         }
     }
 

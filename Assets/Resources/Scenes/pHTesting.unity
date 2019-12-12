@@ -1404,6 +1404,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 1, g: 0.972549, b: 0.27058825, a: 0}
   LerpFactor: 10
+--- !u!65 &580146452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580146419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.039392307, y: 0.039392326, z: 0.0229686}
+  m_Center: {x: -9.313226e-10, y: -0.00000006239861, z: 0.011476302}
 --- !u!1 &734089542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6124713439420169190, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
@@ -2373,7 +2386,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[1].targets.Array.data[0].objectTarget
       value: 
-      objectReference: {fileID: 1033769050}
+      objectReference: {fileID: 2084872581}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[1].targets.Array.data[0].targetAnim
