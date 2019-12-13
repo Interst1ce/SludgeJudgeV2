@@ -54,10 +54,8 @@ public class StoryManager : MonoBehaviour {
 
     [System.Serializable]
     public class Step : object {
-        [SerializeField]
         public Target[] targets;
-        [SerializeField]
-        public SoundEffect[] soundEffects;
+        //public SoundEffect[] soundEffects;
         //These variables are for object manipulation using a slider, not being used right now and might be replaced with a two-axis dragging system
         /*[SerializeField]
         public TapOrDrag tapOrDrag;
@@ -73,44 +71,32 @@ public class StoryManager : MonoBehaviour {
         public ManipulationAxis manipulationAxis;
         [SerializeField]
         public float manipulationMultiplier;*/
-        [SerializeField]
         public bool hasQuestion;
-        [SerializeField]
         public Question question;
         public UnityEvent otherFunctions;
     }
 
     [System.Serializable]
     public class Question : object {
-        [SerializeField]
         public String question;
-        [SerializeField]
         //Do not set this array to be larger than 4
         public String[] choices;
-        [SerializeField]
         public int correctChoice;
     }
 
     [System.Serializable]
     public class Target : object{
-        [SerializeField]
         public GameObject objectTarget;
-        [SerializeField]
         public int targetStep;
-        [SerializeField]
         public AnimationClip targetAnim;
-        [SerializeField]
         public AudioClip targetAudio;
     }
 
 
     [System.Serializable]
     public class SoundEffect : object {
-        [SerializeField]
         public bool loop;
-        [SerializeField]
         public AudioClip soundEffect;
-        [SerializeField]
         public float delay;
     }
 
@@ -154,18 +140,18 @@ public class StoryManager : MonoBehaviour {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit)) {
+                    StopCoroutine("Glow Pulse");
                     //GameObject.Find("TextMeshPro Text").GetComponent<TextMeshProUGUI>().text = hit.transform.gameObject.name;
                     foreach (Step elem in steps) {
                         foreach (Target target in elem.targets) {
                             if (hit.transform.gameObject == target.objectTarget && currentStep == steps.IndexOf(elem) && !audioSource.isPlaying && !audioSource.loop) {
                                 currentStep = target.targetStep;
-                                AudioSource[] audioSources = gameObject.GetComponents<AudioSource>();
+                                /*AudioSource[] audioSources = gameObject.GetComponents<AudioSource>();
                                 foreach (AudioSource audioSource in audioSources) {
                                     if (audioSources.Length > 1) {
                                         Destroy(audioSource);
                                     } else this.audioSource = audioSource;
-                                }
-                                StopCoroutine("GlowPulse");
+                                }*/
                                 GlowObjectCmd glow = target.objectTarget.GetComponent<GlowObjectCmd>();
                                 if (glow != null) {
                                     glow.StartCoroutine("GlowPulse");
@@ -187,9 +173,9 @@ public class StoryManager : MonoBehaviour {
                                     //play audio for the step
                                     PlayAudio(target.targetAudio);
                                 }
-                                if (elem.soundEffects != null) {
+                                /*if (elem.soundEffects != null) {
                                     PlaySoundEffects(elem.soundEffects);
-                                }
+                                }*/
                                 /*if (elem.hasSlider) {
                                     if (!slider.activeSelf) {
                                         //activate slider and add an EventListener that calls CheckSlider(Step) everytime the slider value changes
@@ -252,7 +238,7 @@ public class StoryManager : MonoBehaviour {
         }
     }
 
-    public void PlaySoundEffects(SoundEffect[] effects) {
+    /*public void PlaySoundEffects(SoundEffect[] effects) {
         foreach (SoundEffect effect in effects) {
             if(effect != null) {
                 AudioSource audioSource = gameObject.AddComponent<AudioSource>();
@@ -277,8 +263,8 @@ public class StoryManager : MonoBehaviour {
             audioSource.Play();
         } else {
             StartCoroutine(DelaySoundEffect(audioSource,effect.delay));
-        }*/
-    }
+        }/
+    }*/
 
     //probably not necessary but left in incase not having it breaks something
     IEnumerator DelaySoundEffect(AudioSource source,float delay) {
@@ -295,7 +281,7 @@ public class StoryManager : MonoBehaviour {
         if (!introPlayed) {
             introPlayed = true;
             PlayAudio(introAudio);
-            PlaySoundEffects(backgroundAudioStart);
+            //PlaySoundEffects(backgroundAudioStart);
         }
     }
 

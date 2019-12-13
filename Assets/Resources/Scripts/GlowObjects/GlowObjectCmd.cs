@@ -32,9 +32,10 @@ public class GlowObjectCmd : MonoBehaviour {
         _targetColor = Color.black;
         enabled = true;
     }
-    int i = 0;
+    
     IEnumerator GlowPulse() {
-        while(i < 10) {
+        int i = 0;
+        while (i < 5) {
             //Debug.Log("Turning glow on");
             TurnOn();
             yield return new WaitForSecondsRealtime(1);
@@ -44,7 +45,6 @@ public class GlowObjectCmd : MonoBehaviour {
             //StartCoroutine("GlowPulse");
             i++;
         }
-        i = 0;
     }
 
     /// <summary>
