@@ -140,7 +140,13 @@ public class StoryManager : MonoBehaviour {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit)) {
-                    StopCoroutine("Glow Pulse");
+                    GlowObjectCmd glow = steps[currentStep + 1].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
+                    if (glow != null) {
+                        glow.StartCoroutine("GlowPulse");
+                    } else {
+                        GlowObjectCmd[] glows = steps[currentStep + 1].targets[0].objectTarget.GetComponentsInChildren<GlowObjectCmd>();
+                        foreach (GlowObjectCmd childGlow in glows) childGlow.StartCoroutine("GlowPulse");
+                    }
                     //GameObject.Find("TextMeshPro Text").GetComponent<TextMeshProUGUI>().text = hit.transform.gameObject.name;
                     foreach (Step elem in steps) {
                         foreach (Target target in elem.targets) {
@@ -152,13 +158,7 @@ public class StoryManager : MonoBehaviour {
                                         Destroy(audioSource);
                                     } else this.audioSource = audioSource;
                                 }*/
-                                GlowObjectCmd glow = target.objectTarget.GetComponent<GlowObjectCmd>();
-                                if (glow != null) {
-                                    glow.StartCoroutine("GlowPulse");
-                                } else {
-                                    GlowObjectCmd[] glows = target.objectTarget.GetComponentsInChildren<GlowObjectCmd>();
-                                    foreach (GlowObjectCmd childGlow in glows) childGlow.StartCoroutine("GlowPulse");
-                                }
+                                for(int j = 0; j < 5; j++) StopCoroutine("GlowPulse");
                                 if (target.targetAnim != null) {
                                     //play the animation for the step
                                     Animator animator = hit.transform.gameObject.GetComponent<Animator>();
