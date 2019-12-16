@@ -204,7 +204,7 @@ public class StoryManager : MonoBehaviour {
                                     }
                                     CallQuestion(0);
                                 }
-                                if(elem.otherFunctions.GetPersistentEventCount() > 0) elem.otherFunctions.Invoke();
+                                /*if(elem.otherFunctions.GetPersistentEventCount() > 0)*/ elem.otherFunctions.Invoke();
                             } else if (hit.transform.gameObject != target.objectTarget && currentStep == steps.IndexOf(elem) && !audioSource.isPlaying) {
                                 PlayAudio(missTapAudio);
                             }
