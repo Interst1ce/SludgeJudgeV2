@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiAnims:
   - targetObjPath: Sample_Beaker
-    animClip: {fileID: 1827226128182048838, guid: c84166631efc2984ab113e08101cf87b,
-      type: 3}
+    animTitle: Fill

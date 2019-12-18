@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Step18_MultiAnim
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: pH4_Beaker/StirBar
-    animClip: {fileID: -4207356549542103150, guid: 07350603c4b0f704796900e3834a3340,
-      type: 3}
+  - targetObjPath: pH4_Beaker
+    animTitle: Spin Up

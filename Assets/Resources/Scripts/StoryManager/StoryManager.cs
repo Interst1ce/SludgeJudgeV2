@@ -158,7 +158,9 @@ public class StoryManager : MonoBehaviour {
                                         Destroy(audioSource);
                                     } else this.audioSource = audioSource;
                                 }*/
-                                for(int j = 0; j < 5; j++) StopCoroutine("GlowPulse");
+                                for (int j = 0; j < 5; j++) {
+                                    StopCoroutine("GlowPulse");
+                                }
                                 if (target.targetAnim != null) {
                                     //play the animation for the step
                                     Animator animator = hit.transform.gameObject.GetComponent<Animator>();

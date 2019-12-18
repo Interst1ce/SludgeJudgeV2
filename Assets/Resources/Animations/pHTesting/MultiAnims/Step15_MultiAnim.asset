@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiAnims:
   - targetObjPath: pH4_Beaker
-    animClip: {fileID: 8208769827818943773, guid: 07350603c4b0f704796900e3834a3340,
-      type: 3}
+    animTitle: Fill

@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiAnims:
   - targetObjPath: 100_mL_Graduated_Cylinder
-    animClip: {fileID: 8208769827818943773, guid: 57efa6959a287314a9e973dacd69ccd0,
-      type: 3}
+    animTitle: Fill

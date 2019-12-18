@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Step33_MultiAnimTrigger
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: Sample_Beaker/StirBar
+  - targetObjPath: Sample_Beaker
     animTrigger: Stop Spin

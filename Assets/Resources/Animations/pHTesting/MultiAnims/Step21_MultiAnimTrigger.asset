@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Step21_MultiAnimTrigger
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: pH4_Beaker/StirBar
+  - targetObjPath: pH4_Beaker
     animTrigger: Stop Spin

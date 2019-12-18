@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Step31_MultiAnim
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: Sample_Beaker/StirBar
-    animClip: {fileID: -4207356549542103150, guid: c84166631efc2984ab113e08101cf87b,
-      type: 3}
+  - targetObjPath: Sample_Beaker
+    animTitle: Spin Up

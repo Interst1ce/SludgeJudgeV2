@@ -5,13 +5,22 @@ using UnityEngine;
 public class AnimExtras : MonoBehaviour {
     public void PlayMultiAnim(MultiAnim multiAnim) {
         foreach(animData anim in multiAnim.multiAnims) {
-            GameObject.Find(anim.targetObjPath).GetComponent<Animator>().Play(anim.animClip.name);
+            GameObject target = GameObject.Find(anim.targetObjPath);
+            Animator anmat = target.GetComponent<Animator>();
+            if (anmat != null) {
+                anmat.Play(anim.animTitle);
+            }
         }
     }
 
     public void PlayMultiAnim(MultiAnimTrigger multiAnim) {
         foreach (animTriggerData anim in multiAnim.multiAnims) {
-            GameObject.Find(anim.targetObjPath).GetComponent<Animator>().SetTrigger(anim.animTrigger);
+            GameObject target = GameObject.Find(anim.targetObjPath);
+            Animator anmat = target.GetComponent<Animator>();
+            if (anmat != null) {
+                Debug.Log("Triggering Animation");
+                anmat.SetTrigger(anim.animTrigger);
+            }
         }
     }
 }

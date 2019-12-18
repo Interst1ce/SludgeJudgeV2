@@ -879,12 +879,12 @@ PrefabInstance:
     - target: {fileID: 278757251050830698, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
       propertyPath: m_Name
-      value: StirBar
+      value: 3_X_10mm_Stirring_Bar
       objectReference: {fileID: 0}
     - target: {fileID: 7446390465563464586, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
       propertyPath: m_Name
-      value: StirBar
+      value: 3_X_10mm_Stirring_Bar
       objectReference: {fileID: 0}
     - target: {fileID: 5745752869806096117, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}

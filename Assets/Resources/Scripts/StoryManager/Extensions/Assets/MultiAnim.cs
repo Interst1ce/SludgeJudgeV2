@@ -9,5 +9,5 @@ public class MultiAnim : ScriptableObject {
 [System.Serializable]
 public struct animData {
     public string targetObjPath;
-    public AnimationClip animClip;
+    public string animTitle;
 }
