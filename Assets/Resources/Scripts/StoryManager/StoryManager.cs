@@ -52,6 +52,8 @@ public class StoryManager : MonoBehaviour {
 
     public List<Step> steps = new List<Step>();
 
+    //BREAK ALL OF THESE OUT TO SCRIPTABLE OBJECTS
+
     [System.Serializable]
     public class Step : object {
         public Target[] targets;
