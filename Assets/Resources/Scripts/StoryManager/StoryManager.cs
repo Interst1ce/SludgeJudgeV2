@@ -150,9 +150,13 @@ public class StoryManager : MonoBehaviour {
                         foreach (GlowObjectCmd childGlow in glows) childGlow.StartCoroutine("GlowPulse");
                     }
                     //GameObject.Find("TextMeshPro Text").GetComponent<TextMeshProUGUI>().text = hit.transform.gameObject.name;
+
+                    Animator lastStepAnim = null;
+                    String lastAnimName = "";
+
                     foreach (Step elem in steps) {
                         foreach (Target target in elem.targets) {
-                            if (hit.transform.gameObject == target.objectTarget && currentStep == steps.IndexOf(elem) && !audioSource.isPlaying && !audioSource.loop) {
+                            if (hit.transform.gameObject == target.objectTarget && currentStep == steps.IndexOf(elem) && !audioSource.isPlaying && !audioSource.loop && (lastStepAnim == null || lastStepAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !lastStepAnim.IsInTransition(0))) {
                                 currentStep = target.targetStep;
                                 /*AudioSource[] audioSources = gameObject.GetComponents<AudioSource>();
                                 foreach (AudioSource audioSource in audioSources) {
@@ -166,6 +170,8 @@ public class StoryManager : MonoBehaviour {
                                 if (target.targetAnim != null) {
                                     //play the animation for the step
                                     Animator animator = hit.transform.gameObject.GetComponent<Animator>();
+                                    lastStepAnim = animator;
+                                    lastAnimName = target.targetAnim.name;
                                     if(animator != null) {
                                         animator.Play(target.targetAnim.name);
                                     } else {
