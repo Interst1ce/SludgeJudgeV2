@@ -18,20 +18,20 @@ public class StirrerReadout : MonoBehaviour {
     }
 
     IEnumerator CountUp() {
-        while (counter < targetCount) {
+        while (counter <= targetCount) {
             text = "00" + counter;
             counter++;
             readout.text = text;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
     
     IEnumerator CountDown() {
-        while (counter > targetCount) {
+        while (counter >= targetCount) {
             text = "00" + counter;
             counter--;
             readout.text = text;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
