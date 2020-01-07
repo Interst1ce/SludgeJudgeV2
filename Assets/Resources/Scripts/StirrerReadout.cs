@@ -5,15 +5,31 @@ using TMPro;
 
 public class StirrerReadout : MonoBehaviour {
     public TextMeshPro readout;
-    public int targetCount;
 
     string text = "";
     int counter = 0;
+    int targetCount = 0;
 
-    IEnumerator UpdateText() {
-        while(counter < targetCount) {
-            text = "" + counter;
+    public void Count(int target) {
+        targetCount = target;
+        if (counter < targetCount) {
+            StartCoroutine("CountUp");
+        } else StartCoroutine("CountDown");
+    }
+
+    IEnumerator CountUp() {
+        while (counter < targetCount) {
+            text = "00" + counter;
             counter++;
+            readout.text = text;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    
+    IEnumerator CountDown() {
+        while (counter > targetCount) {
+            text = "00" + counter;
+            counter--;
             readout.text = text;
             yield return new WaitForSeconds(0.1f);
         }
