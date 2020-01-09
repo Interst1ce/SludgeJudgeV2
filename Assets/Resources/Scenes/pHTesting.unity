@@ -509,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 6124713439420169190, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6124713439722305773, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
@@ -1381,6 +1381,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   readout: {fileID: 275746280}
+--- !u!114 &580146424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580146401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22daffd848643e843b19ac0e70a0fda1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readout: {fileID: 949600765}
 --- !u!95 &580146433
 Animator:
   serializedVersion: 3
@@ -3596,7 +3609,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[0].targets.Array.data[0].targetAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 7916aec82a2cfd94c95033d89f140e3b, type: 3}
+      objectReference: {fileID: 8300000, guid: 1b5e6ee7ef647744a84a855e2b52b896, type: 3}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[1].targets.Array.data[0].targetAudio
@@ -3927,6 +3940,11 @@ PrefabInstance:
       propertyPath: steps.Array.data[30].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: introAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: c39600b5a7e8d054990097d4c613cceb, type: 3}
     - target: {fileID: 860529044574038095, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: sceneObject
