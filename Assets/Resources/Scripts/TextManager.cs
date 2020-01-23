@@ -144,7 +144,7 @@ public class TextManager : MonoBehaviour {
             //if statements to check if user is on first or second page of chapters
             case 0:
                 Debug.Log(upperIndex + " load scene");
-                if (upperIndex != 2) {
+                if (upperIndex > 2) {
                     //load scene from given index in array
                     SceneManager.LoadScene(eventManager.GetComponent<TextManager>().chapterScenes[3]);
                 } else {
@@ -152,14 +152,14 @@ public class TextManager : MonoBehaviour {
                 }
                 break;
             case 1:
-                if (upperIndex != 2) {
+                if (upperIndex > 2) {
                     SceneManager.LoadScene(eventManager.GetComponent<TextManager>().chapterScenes[4]);
                 } else {
                     SceneManager.LoadScene(eventManager.GetComponent<TextManager>().chapterScenes[1]);
                 }
                 break;
             case 2:
-                if (upperIndex != 2) {
+                if (upperIndex > 2) {
                     SceneManager.LoadScene(eventManager.GetComponent<TextManager>().chapterScenes[5]);
                 } else {
                     SceneManager.LoadScene(eventManager.GetComponent<TextManager>().chapterScenes[2]);
