@@ -14,6 +14,8 @@ public class PauseMenu : MonoBehaviour {
 
     TextMeshProUGUI chapterTitle;
 
+    bool small = true;
+
     public void Pause() {
         foreach (GameObject gameObject in toToggle) {
             if (gameObject.name == "ChapterTitle") {
@@ -25,6 +27,14 @@ public class PauseMenu : MonoBehaviour {
         AudioListener.pause = !AudioListener.pause;
         foreach (GameObject elem in toToggle) {
             elem.SetActive(!elem.activeSelf);
+        }
+
+        if (small) {
+            gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(0,0.8f);
+            gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(1,1);
+        } else {
+            gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0,0);
+            gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0.11f,1);
         }
     }
 
