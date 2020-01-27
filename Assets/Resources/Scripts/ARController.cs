@@ -13,7 +13,7 @@ public class ARController : MonoBehaviour {
     Anchor anchor1;
     Anchor anchor2;
     public GameObject sceneObject;
-    bool sceneSpawned;
+    public bool sceneSpawned;
     public static bool canSwap = false;
 
     List<Anchor> anchors = new List<Anchor>();

@@ -10,7 +10,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
 
     //Variables to begin the scenario
     //TrackableBehaviour mTrackableBehaviour;
-    bool scenarioHasStarted;
+    bool scenarioHasStarted = false;
     int clipboardInput = 0;
 
     [SerializeField] float waitTime;
@@ -144,9 +144,15 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         HideClipboard();
     }
 
-
     // Update is called once per frame
     void Update() {
+        if (!scenarioHasStarted) {
+            if (GameObject.Find("Managers").GetComponent<ARController>().sceneSpawned) {
+                if (step < 0) step = 0;
+                scenarioHasStarted = true;
+            }
+        }
+
         if (waitTime > 0) {
             waitTime -= Time.deltaTime;
             if (waitTime < 0)
@@ -824,20 +830,4 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         cbStartScale = sludgeJudgeClipboard.localScale;
         //cbStartRot = sludgeJudgeClipboard.rotation;
     }
-
-    /*
-     *
-     * REPLACE WITH CODE THAT WORKS WITH ARCORE
-     * 
-     * 
-    //Will begin scenario once the tracking of the object begins. This is a Vuforia-triggered function
-    public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus,TrackableBehaviour.Status newStatus) {
-        if ((newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) && previousStatus == TrackableBehaviour.Status.NO_POSE && scenarioHasStarted == false) {
-            Debug.Log("Starting story");
-            scenarioHasStarted = true;
-            //StartCoroutine("SludgeJudgeStory");
-            if (step < 0)
-                step = 0;
-        }
-    }*/
 }
