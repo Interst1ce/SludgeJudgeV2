@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResizeScene : MonoBehaviour {
 
     [SerializeField]
     GameObject scene;
-    Transform oldTransform;
+    float oldHeight;
+    float oldScale;
 
     public void Init() {
-        oldTransform = scene.transform;
+        oldHeight = scene.transform.localPosition.y;
+        oldScale = scene.transform.localScale.x;
     }
 
     public void UpdateScale(float scaleMult) {
@@ -17,9 +20,16 @@ public class ResizeScene : MonoBehaviour {
         scene.transform.localScale = newScale;
     }
 
+    public void RevertScale(Slider slider) {
+        slider.value = oldScale;
+    }
+
     public void UpdateHeight(float height) {
         scene.transform.localPosition = new Vector3(scene.transform.localPosition.x,height,scene.transform.localPosition.z);
+    }
 
+    public void RevertHeight(Slider slider) {
+        slider.value = oldHeight;
     }
 
     public void StartSwap() {
@@ -27,15 +37,11 @@ public class ResizeScene : MonoBehaviour {
     }
 
     public void CancelSwap() {
-        scene.transform.localScale = oldTransform.localScale;
-        scene.transform.localRotation = oldTransform.localRotation;
+        //scene.transform.localScale = oldTransform.localScale;
+        //scene.transform.localRotation = oldTransform.localRotation;
     }
 
     public void ConfirmUpdate() {
         ARController.canSwap = false;
-    }
-
-    void Update() {
-
     }
 }

@@ -4,42 +4,38 @@ using UnityEngine;
 
 public class AudioScript : MonoBehaviour
 {
-   public List<AudioClip> Tracks;
+    public List<AudioClip> Tracks;
     [SerializeField] int trackCount;
     [SerializeField] Camera ARCam;
     AudioSource Listen;
- 
+
     [SerializeField] GameObject Clipboard;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         trackCount = 0;
         ARCam.gameObject.AddComponent<AudioSource>();
         Listen = ARCam.GetComponent<AudioSource>();
         Listen.playOnAwake = false;
-       
 
 
-        
+
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-       
-        
+    void Update() {
+
+
     }
 
-    private void Awake()
-    {
-       // Listen.playOnAwake = false;
+    private void Awake() {
+        // Listen.playOnAwake = false;
     }
 
 
 
-    public void PlayAudio()
-    {
+    public void PlayAudio() {
         Listen.clip = Tracks[trackCount];
 
         Listen.Play();
@@ -47,23 +43,20 @@ public class AudioScript : MonoBehaviour
         trackCount++;
     }
 
-    public void PlayAudio(int index)
-    {
-        index = Mathf.Clamp(index, 0, Tracks.Count - 1);
+    public void PlayAudio(int index) {
+        index = Mathf.Clamp(index,0,Tracks.Count - 1);
         trackCount = index;
         PlayAudio();
     }
 
-    public void PauseAudio()
-    {
+    public void PauseAudio() {
         Listen.Pause();
     }
 
-    public void UnpauseAudio()
-    {
+    public void UnpauseAudio() {
         Listen.UnPause();
     }
 
-   
+
 
 }

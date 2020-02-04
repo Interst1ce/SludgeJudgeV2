@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour {
     GameObject[] toToggle;
     [SerializeField]
     GameObject[] subMenus;
-
+    [SerializeField]
     TextMeshProUGUI chapterTitle;
 
     bool small = true;
@@ -30,11 +30,11 @@ public class PauseMenu : MonoBehaviour {
         }
 
         if (small) {
-            gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(0,0.8f);
-            gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(1,1);
+            gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(0,0);
+            gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(1,1);
         } else {
-            gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0,0);
-            gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0.11f,1);
+            gameObject.GetComponent<RectTransform>().anchorMin = new Vector2(0,0.83f);
+            gameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0.008f,1);
         }
     }
 

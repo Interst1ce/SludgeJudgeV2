@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2316316456673748008}
   - component: {fileID: 2316316456673748009}
   - component: {fileID: 2316316456673748010}
-  - component: {fileID: 2316316456673747991}
+  - component: {fileID: 1714834901140730344}
   m_Layer: 5
   m_Name: MoreChapters
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: UpdateIndexBounds
         m_Mode: 3
         m_Arguments:
@@ -131,7 +131,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: UpdateText
         m_Mode: 1
         m_Arguments:
@@ -144,7 +144,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316456673747991
+--- !u!114 &1714834901140730344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316456673748012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chapterTitles: []
@@ -349,6 +349,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -363,7 +365,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -375,7 +380,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -409,15 +414,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316456841313180
@@ -432,7 +428,7 @@ GameObject:
   - component: {fileID: 2316316456841313176}
   - component: {fileID: 2316316456841313177}
   - component: {fileID: 2316316456841313178}
-  - component: {fileID: 2316316456841313159}
+  - component: {fileID: 8827795411886669742}
   m_Layer: 5
   m_Name: Chapter1
   m_TagString: Untagged
@@ -542,8 +538,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316456841313159}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 2316316456841313180}
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -555,7 +551,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316456841313159
+--- !u!114 &8827795411886669742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,7 +560,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316456841313180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chapterTitles: []
@@ -583,7 +579,7 @@ GameObject:
   - component: {fileID: 2316316456912387062}
   - component: {fileID: 2316316456912387063}
   - component: {fileID: 2316316456912386824}
-  - component: {fileID: 2316316456912387061}
+  - component: {fileID: 1123360919978234754}
   m_Layer: 5
   m_Name: Chapter2
   m_TagString: Untagged
@@ -693,8 +689,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316456912387061}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 2316316456912386826}
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -706,7 +702,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316456912387061
+--- !u!114 &1123360919978234754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -715,7 +711,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316456912386826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chapterTitles: []
@@ -938,7 +934,7 @@ GameObject:
   - component: {fileID: 2316316456998678071}
   - component: {fileID: 2316316456998678068}
   - component: {fileID: 2316316456998678070}
-  - component: {fileID: 2316316456998678069}
+  - component: {fileID: 9174007208507898406}
   m_Layer: 5
   m_Name: TopModule
   m_TagString: Untagged
@@ -1018,7 +1014,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: UpdateIndexBounds
         m_Mode: 3
         m_Arguments:
@@ -1029,7 +1025,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316456998678069}
+      - m_Target: {fileID: 9174007208507898406}
         m_MethodName: UpdateText
         m_Mode: 1
         m_Arguments:
@@ -1040,7 +1036,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: HighlightModuleButton
         m_Mode: 3
         m_Arguments:
@@ -1053,7 +1049,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316456998678069
+--- !u!114 &9174007208507898406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1062,19 +1058,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316456998678088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapterTitles:
-  - Things To Know
-  - Chain of Custody
-  chapterSummaries:
-  - Basic Knowledge of Sampling
-  - Basic Knowledge of The Chain of Custody
-  chapterSprites:
-  - {fileID: 21300000, guid: 470afe02c90db3842be1ccaa5afb3a6e, type: 3}
-  - {fileID: 21300000, guid: 925133131eb3cfd419a501aa8e30bf89, type: 3}
-  chapterScenes: 0a0000000b000000
+  chapterTitles: []
+  chapterSummaries: []
+  chapterSprites: []
+  chapterScenes: 
 --- !u!1 &2316316457011210446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1151,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1175,7 +1167,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 513
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1187,7 +1182,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -1221,15 +1216,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316457051178004
@@ -1424,6 +1410,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1431,14 +1419,17 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.1
+  m_fontSize: 58.55
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1450,7 +1441,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -1484,15 +1475,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316457434865455
@@ -1655,6 +1637,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -1669,7 +1653,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1681,7 +1668,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -1715,15 +1702,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316457532619673
@@ -1737,8 +1715,8 @@ GameObject:
   - component: {fileID: 2316316457532619654}
   - component: {fileID: 2316316457532619655}
   - component: {fileID: 2316316457532619672}
-  - component: {fileID: 2316316457532619653}
   - component: {fileID: 2316316457532619652}
+  - component: {fileID: 1026013112436372731}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1794,22 +1772,6 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!114 &2316316457532619653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2316316457532619673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chapterTitles: []
-  chapterSummaries: []
-  chapterSprites: []
-  chapterScenes: 
 --- !u!114 &2316316457532619652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,6 +1784,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac68699594c17045a2ff08152f76bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1026013112436372731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316316457532619673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chapterTitles: []
+  chapterSummaries: []
+  chapterSprites: []
+  chapterScenes: 
 --- !u!1 &2316316457609675414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,6 +2064,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2100,7 +2080,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 516
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2112,7 +2095,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -2146,15 +2129,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316457890024429
@@ -2243,6 +2217,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2257,7 +2233,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 513
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2269,7 +2248,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -2303,15 +2282,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316457913225517
@@ -2326,7 +2296,7 @@ GameObject:
   - component: {fileID: 2316316457913225513}
   - component: {fileID: 2316316457913225514}
   - component: {fileID: 2316316457913225515}
-  - component: {fileID: 2316316457913225512}
+  - component: {fileID: 7079588826221768161}
   m_Layer: 5
   m_Name: Chapter3
   m_TagString: Untagged
@@ -2436,8 +2406,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316457913225512}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 2316316457913225517}
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2449,7 +2419,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316457913225512
+--- !u!114 &7079588826221768161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2458,7 +2428,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316457913225517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chapterTitles: []
@@ -2625,6 +2595,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2639,7 +2611,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 513
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2651,7 +2626,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -2685,15 +2660,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316457985533312
@@ -2781,7 +2747,7 @@ GameObject:
   - component: {fileID: 2316316458015327899}
   - component: {fileID: 2316316458015327896}
   - component: {fileID: 2316316458015327898}
-  - component: {fileID: 2316316458015327897}
+  - component: {fileID: 5999385049289553390}
   m_Layer: 5
   m_Name: BottomModule
   m_TagString: Untagged
@@ -2861,7 +2827,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: UpdateIndexBounds
         m_Mode: 3
         m_Arguments:
@@ -2872,7 +2838,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316458015327897}
+      - m_Target: {fileID: 5999385049289553390}
         m_MethodName: UpdateText
         m_Mode: 1
         m_Arguments:
@@ -2883,7 +2849,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: HighlightModuleButton
         m_Mode: 3
         m_Arguments:
@@ -2896,7 +2862,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316458015327897
+--- !u!114 &5999385049289553390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2905,25 +2871,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316458015327900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapterTitles:
-  - Collection Tutorial
-  - Analysis Tutorial
-  - Collection Review
-  - Analysis Review
-  chapterSummaries:
-  - A tutorial on the process of taking an aseptic sample
-  - A tutorial on analyzing your aseptic sample
-  - Review of the collection of an aseptic sample
-  - Review of analyzing your sample
-  chapterSprites:
-  - {fileID: 21300000, guid: 5c2de3328c945da49ab420ff012b5f93, type: 3}
-  - {fileID: 21300000, guid: b4a1e3d5c7542c24989d61b7f65d9855, type: 3}
-  - {fileID: 21300000, guid: 909e6cb4da60e8b4b95527909881b711, type: 3}
-  - {fileID: 21300000, guid: 909e6cb4da60e8b4b95527909881b711, type: 3}
-  chapterScenes: 03000000020000000500000004000000
+  chapterTitles: []
+  chapterSummaries: []
+  chapterSprites: []
+  chapterScenes: 
 --- !u!1 &2316316458034082806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,6 +2964,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3017,14 +2973,17 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.1
+  m_fontSize: 58.55
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -3036,7 +2995,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -3070,15 +3029,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316458048062086
@@ -3270,7 +3220,7 @@ GameObject:
   - component: {fileID: 2316316458416011686}
   - component: {fileID: 2316316458416011687}
   - component: {fileID: 2316316458416011704}
-  - component: {fileID: 2316316458416011705}
+  - component: {fileID: 660240340991717337}
   m_Layer: 5
   m_Name: BackChapters
   m_TagString: Untagged
@@ -3378,7 +3328,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: UpdateIndexBounds
         m_Mode: 3
         m_Arguments:
@@ -3389,7 +3339,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: UpdateText
         m_Mode: 1
         m_Arguments:
@@ -3402,7 +3352,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316458416011705
+--- !u!114 &660240340991717337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3411,7 +3361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316458416011707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chapterTitles: []
@@ -3504,6 +3454,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3518,7 +3470,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 516
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -3530,7 +3485,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -3564,15 +3519,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316458525458143
@@ -3586,7 +3532,7 @@ GameObject:
   - component: {fileID: 2316316458525458142}
   - component: {fileID: 2316316458525458139}
   - component: {fileID: 2316316458525458141}
-  - component: {fileID: 2316316458525458140}
+  - component: {fileID: 3617809195721468956}
   m_Layer: 5
   m_Name: MiddleModule
   m_TagString: Untagged
@@ -3666,7 +3612,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: UpdateIndexBounds
         m_Mode: 3
         m_Arguments:
@@ -3677,7 +3623,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316458525458140}
+      - m_Target: {fileID: 3617809195721468956}
         m_MethodName: UpdateText
         m_Mode: 1
         m_Arguments:
@@ -3688,7 +3634,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2316316457532619653}
+      - m_Target: {fileID: 1026013112436372731}
         m_MethodName: HighlightModuleButton
         m_Mode: 3
         m_Arguments:
@@ -3701,7 +3647,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2316316458525458140
+--- !u!114 &3617809195721468956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3710,25 +3656,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316316458525458143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb72d55c9b7d144f9d1b65434017415, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d300bd1990d794488e00f917f2c790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapterTitles:
-  - Grab Sampling Tutorial
-  - Composite Sampling Tutorial
-  - Grab Sampling Review
-  - Composite Sampling Review
-  chapterSummaries:
-  - Learn the basics of Grab Sampling
-  - Learn the basics of Composite Sampling
-  - Review the basics of Grab Sampling
-  - Review the basics of Composite Sampling
-  chapterSprites:
-  - {fileID: 21300000, guid: 5c2de3328c945da49ab420ff012b5f93, type: 3}
-  - {fileID: 21300000, guid: cfaf03fcd8f9b8c438e98548594846bf, type: 3}
-  - {fileID: 21300000, guid: 909e6cb4da60e8b4b95527909881b711, type: 3}
-  - {fileID: 21300000, guid: 909e6cb4da60e8b4b95527909881b711, type: 3}
-  chapterScenes: 06000000070000000800000009000000
+  chapterTitles: []
+  chapterSummaries: []
+  chapterSprites: []
+  chapterScenes: 
 --- !u!1 &2316316458635695787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,6 +3749,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3829,7 +3765,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 513
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -3841,7 +3780,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -3875,15 +3814,6 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2316316458763412419
@@ -3972,6 +3902,8 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3986,7 +3918,10 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -3998,7 +3933,7 @@ MonoBehaviour:
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
+  parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
@@ -4032,14 +3967,5 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
