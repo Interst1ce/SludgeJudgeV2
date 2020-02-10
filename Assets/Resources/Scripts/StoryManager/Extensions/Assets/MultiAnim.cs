@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MultiAnim", menuName = "ScriptableObjects/MultiAnim",order = 1)]
+[CreateAssetMenu(fileName = "MultiAnim",menuName = "ScriptableObjects/MultiAnim",order = 1)]
 public class MultiAnim : ScriptableObject {
-    public List<animData> multiAnims = new List<animData>();    
+    public List<AnimData> multiAnims = new List<AnimData>();    
 }
 [System.Serializable]
-public struct animData {
+public struct AnimData {
     public string targetObjPath;
     public string animTitle;
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimExtras : MonoBehaviour {
     public void PlayMultiAnim(MultiAnim multiAnim) {
-        foreach(animData anim in multiAnim.multiAnims) {
+        foreach(AnimData anim in multiAnim.multiAnims) {
             GameObject target = GameObject.Find(anim.targetObjPath);
             Animator anmat = target.GetComponent<Animator>();
             if (anmat != null) {
