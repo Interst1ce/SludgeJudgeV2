@@ -227,6 +227,12 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         GlobalFunctions.UpdatePrevMousePos();
     }
 
+    void ModelIntro() {
+        //show both sludge judge models
+        //play audio
+        //that's it really
+    }
+
     void IntroOne() {
         sludgeLevels = Mathf.Lerp(sludgeAmount.x,sludgeAmount.y,UnityEngine.Random.Range(0f,1f));
 
