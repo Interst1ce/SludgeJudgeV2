@@ -77,22 +77,19 @@ public class MainMenu : MonoBehaviour {
         if (buttonPressed == 1) {
             lowIndex += 3;
             if (upIndex + 4 > chapLen) {
-                upIndex += 3 - ((chapLen - upIndex + 1) % 3);
+                upIndex += 3 - ((chapLen - upIndex) % 3);
             } else upIndex += 3;
         } else if (buttonPressed == -1) {
-            lowIndex -= 3;
             if ((upIndex + 1) % 3 != 0) {
-                upIndex -= 3 - upIndex % 3;
+                if (upIndex == lowIndex) upIndex -= 1; else upIndex -= 3 - upIndex % 3;
             } else upIndex -= 3;
+            lowIndex -= 3;
         } else {
             lowIndex = 0;
             if (chapLen < 3) {
                 upIndex = chapLen - 1;
             } else upIndex = 2;
         }
-
-        Debug.Log("lowIndex: " + lowIndex);
-        Debug.Log("upIndex: " + upIndex);
 
         if (lowIndex == 0) {
             prevChapters.GetComponent<Button>().interactable = false;
@@ -138,19 +135,32 @@ public class MainMenu : MonoBehaviour {
         for (int i = 0; i < 2; i++) if (i > upIndex) buttons[i].interactable = false;
 
         var modChaps = modules[modIndex].chapters;
-        Debug.Log("" + modChaps);
 
         if(lowIndex == upIndex) {
-            buttons[lowIndex].interactable = true;
-            chapterTitles[lowIndex].text = modChaps[lowIndex].chapterTitle;
-            chapterSummaries[lowIndex].text = modChaps[lowIndex].chapterSummary;
-            chapterIcons[lowIndex].sprite = modChaps[lowIndex].chapterIcon;
-        }
-        for (int i = lowIndex; i < upIndex + 1; i++) {
-            buttons[i - lowIndex].interactable = true;
-            chapterTitles[i - lowIndex].text = modChaps[i - lowIndex].chapterTitle;
-            chapterSummaries[i - lowIndex].text = modChaps[i - lowIndex].chapterSummary;
-            chapterIcons[i - lowIndex].sprite = modChaps[i - lowIndex].chapterIcon;
+            int transIndex = lowIndex - upIndex;
+            buttons[transIndex].interactable = true;
+            chapterTitles[transIndex].text = modChaps[lowIndex].chapterTitle;
+            chapterSummaries[transIndex].text = modChaps[lowIndex].chapterSummary;
+            chapterIcons[transIndex].sprite = modChaps[lowIndex].chapterIcon;
+            for(int i = transIndex + 1; i < transIndex + 3; i++) {
+                Debug.Log("" + i);
+                chapterTitles[i].text = "";
+                chapterSummaries[i].text = "";
+                chapterIcons[i].sprite = null;
+            }
+        } else {
+            for (int i = lowIndex; i < upIndex + 1; i++) {
+                buttons[i - lowIndex].interactable = true;
+                if(i != upIndex + 1) {
+                    chapterTitles[i - lowIndex].text = modChaps[i].chapterTitle;
+                    chapterSummaries[i - lowIndex].text = modChaps[i].chapterSummary;
+                    chapterIcons[i - lowIndex].sprite = modChaps[i].chapterIcon;
+                } else {
+                    chapterTitles[i - lowIndex].text = modChaps[i - 1].chapterTitle;
+                    chapterSummaries[i - lowIndex].text = modChaps[i - 1].chapterSummary;
+                    chapterIcons[i - lowIndex].sprite = modChaps[i - 1].chapterIcon;
+                } 
+            }
         }
         if(upIndex < 2) {
             for(int i = upIndex + 1; i < 3; i++) {
@@ -158,11 +168,12 @@ public class MainMenu : MonoBehaviour {
                 chapterSummaries[i].text = "";
                 chapterIcons[i].sprite = null;
             }
-        } else if(upIndex > modChaps.Capacity - 3) {
-            for(int i = upIndex % 3; i < 3; i++) {
-                chapterTitles[i].text = "";
-                chapterSummaries[i].text = "";
-                chapterIcons[i].sprite = null;
+        } else if(upIndex > modChaps.Capacity) {                    //I don't know if it ever actually gets to this block
+            for(int i = upIndex; i > modChaps.Capacity - 1; i--) {
+                Debug.Log("" + (i - modChaps.Capacity - 1));
+                chapterTitles[i - modChaps.Capacity - 1].text = "";
+                chapterSummaries[i - modChaps.Capacity - 1].text = "";
+                chapterIcons[i - modChaps.Capacity - 1].sprite = null;
             }
         }
         #endregion
