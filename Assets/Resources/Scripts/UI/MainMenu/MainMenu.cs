@@ -168,7 +168,7 @@ public class MainMenu : MonoBehaviour {
                 chapterSummaries[i].text = "";
                 chapterIcons[i].sprite = null;
             }
-        } else if(upIndex > modChaps.Capacity) {                    //I don't know if it ever actually gets to this block
+        } else if(upIndex > modChaps.Capacity) {        //I don't know if it ever actually gets to this block
             for(int i = upIndex; i > modChaps.Capacity - 1; i--) {
                 Debug.Log("" + (i - modChaps.Capacity - 1));
                 chapterTitles[i - modChaps.Capacity - 1].text = "";
