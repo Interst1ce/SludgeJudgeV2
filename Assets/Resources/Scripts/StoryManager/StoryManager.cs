@@ -80,9 +80,9 @@ public class StoryManager : MonoBehaviour {
 
     [System.Serializable]
     public class Question : object {
-        public String question;
+        public string question;
         //Do not set this array to be larger than 4
-        public String[] choices;
+        public string[] choices;
         public int correctChoice;
     }
 
@@ -115,7 +115,7 @@ public class StoryManager : MonoBehaviour {
 
     //TODO: Break apart intros/outros from update so they don't need to be rechecked every frame and can just be played once the scene is initialized
     //TODO? Turn intros/outros/looping background audio into scriptable objects that are played through extension(s)
-    //TODO? Break all audio out into scriptable objects to be played through extension(s)
+    //TODO? Break all non-narration audio out into scriptable objects to be played through extension(s)
 
     public void Update() {
         if (currentStep == steps.Count && !audioSource.isPlaying && finished == false /*&& !qAPanel.activeSelf*/) {
