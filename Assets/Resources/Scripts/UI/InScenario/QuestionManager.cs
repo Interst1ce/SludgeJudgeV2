@@ -9,8 +9,8 @@ public class QuestionManager : MonoBehaviour {
     public int answer;
     public string[] choices;
     List<GameObject> answerLayouts = new List<GameObject>();
-    public List<TextMeshProUGUI> textToBeFaded = new List<TextMeshProUGUI>();
-    public List<Image> imageToBeFaded = new List<Image>();
+    List<TextMeshProUGUI> textToBeFaded = new List<TextMeshProUGUI>();
+    List<Image> imageToBeFaded = new List<Image>();
     GameObject qAPanel;
     GameObject questionPanel;
     AudioSource audioSource;
