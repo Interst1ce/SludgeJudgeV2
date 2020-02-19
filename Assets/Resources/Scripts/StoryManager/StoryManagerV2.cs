@@ -41,8 +41,20 @@ public class StoryManagerV2 : MonoBehaviour {
                 if (Physics.Raycast(ray,out hit)) {
                     //do glowy stuff, by the way add a depth test to the shader
 
-                    //differentiate between target types
-                        //do shit if target has been met
+                    foreach (StepObject.Target target in steps[currentStep].targets) {
+                        switch (target.type) {
+                            case StepObject.TargetType.Object:
+                                if (hit.transform == target.objectTarget.transform) {
+
+                                }
+                                break;
+                            case StepObject.TargetType.Slider:
+                                //oh boy
+                                break;
+                            default:
+                                break;
+                        }
+                    }
                 }
             }
         }
