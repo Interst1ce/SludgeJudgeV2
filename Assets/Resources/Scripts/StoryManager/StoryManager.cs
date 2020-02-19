@@ -185,8 +185,8 @@ public class StoryManager : MonoBehaviour {
                                 }
                                 /*if (elem.soundEffects != null) {
                                     PlaySoundEffects(elem.soundEffects);
-                                }*/
-                                /*if (elem.hasSlider) {
+                                }
+                                if (elem.hasSlider) {
                                     if (!slider.activeSelf) {
                                         //activate slider and add an EventListener that calls CheckSlider(Step) everytime the slider value changes
                                         slider.SetActive(true);

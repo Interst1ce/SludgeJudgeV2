@@ -6,6 +6,8 @@ public class QuestionManagerV2 : MonoBehaviour {
     public List<Question> questions;
 
     GameObject qAPanel;
+    GameObject questionPanel;
+    GameObject answerLayout;
     AudioSource audioSource;
 
     [SerializeField]
@@ -15,9 +17,7 @@ public class QuestionManagerV2 : MonoBehaviour {
     [SerializeField]
     AudioClip incorrectSound;
 
-
     private void Awake() {
-        qAPanel = GameObject.Find("QAPanel");
         if (buttonSound != null) {
             audioSource = qAPanel.AddComponent<AudioSource>();
             audioSource.clip = buttonSound;
