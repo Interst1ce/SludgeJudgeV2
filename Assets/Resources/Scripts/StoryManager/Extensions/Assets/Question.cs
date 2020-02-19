@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Question",menuName = "ScriptableObjects/Question",order = 4)]
+[CreateAssetMenu(fileName = "Question",menuName = "ScriptableObjects/StoryManager/Extensions/Question",order = 0)]
 public class Question : ScriptableObject {
     public string question;
     public int step;

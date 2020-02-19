@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MultiAnim",menuName = "ScriptableObjects/MultiAnim",order = 1)]
+[CreateAssetMenu(fileName = "MultiAnim",menuName = "ScriptableObjects/StoryManager/Extensions/MultiAnim",order = 2)]
 public class MultiAnim : ScriptableObject {
     public List<AnimData> multiAnims = new List<AnimData>();    
 }

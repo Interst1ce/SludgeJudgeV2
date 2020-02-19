@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Sound Effect",menuName = "ScriptableObjects/Sound Effect",order = 3)]
+[CreateAssetMenu(fileName = "Sound Effect",menuName = "ScriptableObjects/StoryManager/Extensions/Sound Effect",order = 1)]
 public class SoundEffect : ScriptableObject {
     public List<SFX> soundEffects = new List<SFX>();
 }

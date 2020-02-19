@@ -87,7 +87,7 @@ public class StoryManager : MonoBehaviour {
     }
 
     [System.Serializable]
-    public class Target : object{
+    public class Target : object {
         public GameObject objectTarget;
         public int targetStep;
         public AnimationClip targetAnim;
@@ -131,7 +131,7 @@ public class StoryManager : MonoBehaviour {
         }
         if (!audioSource.isPlaying && introPlayed && currentStep == 0) {
             if (steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>() != null) {
-                    steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>().StartCoroutine("GlowPulse");
+                steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>().StartCoroutine("GlowPulse");
             }
         }
 
@@ -172,7 +172,7 @@ public class StoryManager : MonoBehaviour {
                                     Animator animator = hit.transform.gameObject.GetComponent<Animator>();
                                     lastStepAnim = animator;
                                     lastAnimName = target.targetAnim.name;
-                                    if(animator != null) {
+                                    if (animator != null) {
                                         animator.Play(target.targetAnim.name);
                                     } else {
                                         //allows for selecting a level 1 child for the object target
@@ -214,7 +214,8 @@ public class StoryManager : MonoBehaviour {
                                     }
                                     CallQuestion(0);
                                 }
-                                /*if(elem.otherFunctions.GetPersistentEventCount() > 0)*/ elem.otherFunctions.Invoke();
+                                /*if(elem.otherFunctions.GetPersistentEventCount() > 0)*/
+                                elem.otherFunctions.Invoke();
                             } else if (hit.transform.gameObject != target.objectTarget && currentStep == steps.IndexOf(elem) && !audioSource.isPlaying) {
                                 PlayAudio(missTapAudio);
                             }
@@ -242,7 +243,7 @@ public class StoryManager : MonoBehaviour {
     }
 
     public void PlayAudio(AudioClip audio) {
-        if(audio != null) {
+        if (audio != null) {
             audioSource.clip = audio;
             audioSource.Play();
         }

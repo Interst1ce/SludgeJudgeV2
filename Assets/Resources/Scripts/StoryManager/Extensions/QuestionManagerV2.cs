@@ -27,7 +27,7 @@ public class QuestionManagerV2 : MonoBehaviour {
 
     }
 
-    void Update() {
+    public void StartQuest(int step) {
 
     }
 
@@ -47,6 +47,10 @@ public class QuestionManagerV2 : MonoBehaviour {
             }
         }
         audioSource.clip = buttonSound;
+    }
+
+    IEnumerator UpdateUI() {
+        yield return null;
     }
 
     public void DisableUI() {
