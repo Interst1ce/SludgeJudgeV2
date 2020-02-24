@@ -5,8 +5,6 @@ using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Step",menuName = "ScriptableObjects/StoryManager/Step",order = 0)]
 public class StepObject : ScriptableObject {
-    public Target test;
-    
     public List<Target> targets;
     public List<Question> questions;
 
