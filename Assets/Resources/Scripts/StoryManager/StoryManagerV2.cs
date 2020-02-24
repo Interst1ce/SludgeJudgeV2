@@ -39,13 +39,14 @@ public class StoryManagerV2 : MonoBehaviour {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit)) {
-                    //do glowy stuff, by the way add a depth test to the shader
-
                     foreach (StepObject.Target target in steps[currentStep].targets) {
                         switch (target.type) {
                             case StepObject.TargetType.Object:
                                 if (hit.transform == target.objectTarget.transform) {
-
+                                    //stop glow
+                                    //play narration audio
+                                    //play animations
+                                    //start glow for next step if it has an object target, by the way add a depth test to the shader
                                 }
                                 break;
                             case StepObject.TargetType.Slider:
