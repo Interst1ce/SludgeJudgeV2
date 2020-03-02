@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,7 @@ public class StoryManagerV2 : MonoBehaviour {
     public int currentStep;
     private bool introPlayed = false;
     private bool finished = false;
+    private AudioSource audioSource;
 
     [SerializeField]
     AudioClip introAudio;
@@ -24,7 +26,7 @@ public class StoryManagerV2 : MonoBehaviour {
     public List<StepObject> steps = new List<StepObject>();
 
     private void Awake() {
-        //audioSource
+        audioSource = GetComponent<AudioSource>();
     }
     void Start() {
 
@@ -33,7 +35,16 @@ public class StoryManagerV2 : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         //check finish requirements
+        if(currentStep == steps.Count && !audioSource.isPlaying && finished == true) {
+            if(outroAudio != null) {
+                //play outro audio and once it is finished CallPause();
+            } //else pause after delay
+        }
         //make initial object glow
+        if (!audioSource.isPlaying && introPlayed && currentStep == 0) {
+            var glow = steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>(); //might throw an error if first target isn't an object
+            if (glow != null) glow.StartCoroutine("GlowPulse");
+        }
         for (int i = 0; i < Input.touchCount; i++) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
@@ -50,7 +61,7 @@ public class StoryManagerV2 : MonoBehaviour {
                                 }
                                 break;
                             case StepObject.TargetType.Slider:
-                                //oh boy
+                                //oh boy, maybe start a coroutine that checks the slider? Do something with listeners?
                                 break;
                             default:
                                 break;

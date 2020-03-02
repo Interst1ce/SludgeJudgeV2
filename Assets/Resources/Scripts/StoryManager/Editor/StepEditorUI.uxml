@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="rootElement" style="flex-grow: 1;">
+        <Style src="StepEditorUI.uss" />
+        <ui:VisualElement name="targetElement">
+            <ui:Foldout text="Target" name="targetFoldout">
+                <uie:EnumField label="Target Type" value="Object" name="targetType" type="StepObject.TargetType" />
+                <uie:ObjectField label="Target Object" name="target" allow-scene-objects="true" />
+            </ui:Foldout>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
