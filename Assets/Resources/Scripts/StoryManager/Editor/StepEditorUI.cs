@@ -20,12 +20,30 @@ public class StepEditorUI : Editor {
         Debug.Log(visualTree);
         root.Clear();
         visualTree.CloneTree(root);
+
+        ScriptableObject selObj = Selection.activeObject as ScriptableObject;
+        SerializedObject serObj = new SerializedObject(selObj);
+        root.Bind(serObj);
+
+        StepObject.TargetType targetType = 0;
+        var tType = serObj.FindProperty("target").FindPropertyRelative("type");
+        var targetTypeField = root.Q<EnumField>("targetType");
+        targetTypeField.Init((StepObject.TargetType)tType.enumValueIndex);
+        targetTypeField.RegisterValueChangedCallback(evt => {
+            targetType = (StepObject.TargetType)evt.newValue;
+            Debug.Log("" + (int)targetType);
+            tType.enumValueIndex = (int)targetType;
+            //Debug.Log("" + tType.enumValueIndex);
+        });
+
         var targetField = root.Q<ObjectField>("target");
         targetField.objectType = typeof(GameObject);
-        root.Q<EnumField>("targetType").Init(StepObject.TargetType.Object);
+
         //root.Query(classes: new string[] { "test" }).ForEach((preview) => { preview.Add(CreateModuleUI(preview.name)); });
         return root;
     }
+
+    
 
     //public VisualElement CreateModuleUI(string moduleName) {
 
