@@ -2,9 +2,13 @@
     <ui:VisualElement name="rootElement" style="flex-grow: 1;">
         <Style src="StepEditorUI.uss" />
         <ui:VisualElement name="targetElement">
-            <ui:Foldout text="Target" name="targetFoldout">
+            <ui:Foldout text="New Target" name="targetFoldout">
+                <uie:IntegerField label="Step Target" value="0" name="stepTarget" />
                 <uie:EnumField label="Target Type" value="Object" name="targetType" type="StepObject.TargetType" />
                 <uie:ObjectField label="Target Object" name="target" allow-scene-objects="true" />
+                <uie:ObjectField label="Target Animation" name="targetAnim" />
+                <uie:ObjectField label="Target Audio" name="targetAudio" />
+                <ui:Button text="Button" />
             </ui:Foldout>
         </ui:VisualElement>
     </ui:VisualElement>

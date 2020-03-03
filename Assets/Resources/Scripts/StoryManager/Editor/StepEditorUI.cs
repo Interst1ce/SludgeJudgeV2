@@ -21,29 +21,69 @@ public class StepEditorUI : Editor {
         root.Clear();
         visualTree.CloneTree(root);
 
+        var stepTargetField = root.Q<IntegerField>("stepTarget");
+        var targetTypeField = root.Q<EnumField>("targetType");
+        var targetField = root.Q<ObjectField>("target");
+        var targetAnimField = root.Q<ObjectField>("targetAnim");
+        targetAnimField.objectType = typeof(AnimationClip);
+        var targetAudioField = root.Q<ObjectField>("targetAudio");
+        targetAudioField.objectType = typeof(AudioClip);
+
         ScriptableObject selObj = Selection.activeObject as ScriptableObject;
         SerializedObject serObj = new SerializedObject(selObj);
         root.Bind(serObj);
 
+        var newTarget = serObj.FindProperty("newTarget");
+
+        var stepTarget = newTarget.FindPropertyRelative("targetStep");
+        var tType = newTarget.FindPropertyRelative("type");
+        var targetAnim = newTarget.FindPropertyRelative("targetAnim");
+        var targetAudio = newTarget.FindPropertyRelative("targetAudio");
+
+        UpdateTargetField((StepObject.TargetType)tType.enumValueIndex,targetField);
+
+        stepTargetField.RegisterValueChangedCallback(evt => {
+            stepTarget.intValue = evt.newValue;
+            serObj.ApplyModifiedProperties();
+        });
+
         StepObject.TargetType targetType = 0;
-        var tType = serObj.FindProperty("target").FindPropertyRelative("type");
-        var targetTypeField = root.Q<EnumField>("targetType");
         targetTypeField.Init((StepObject.TargetType)tType.enumValueIndex);
         targetTypeField.RegisterValueChangedCallback(evt => {
             targetType = (StepObject.TargetType)evt.newValue;
-            Debug.Log("" + (int)targetType);
             tType.enumValueIndex = (int)targetType;
+            UpdateTargetField(targetType,targetField);
+            serObj.ApplyModifiedProperties();
             //Debug.Log("" + tType.enumValueIndex);
         });
 
-        var targetField = root.Q<ObjectField>("target");
-        targetField.objectType = typeof(GameObject);
+        targetAnimField.RegisterValueChangedCallback(evt => {
+            targetAnim.objectReferenceValue = evt.newValue;
+            serObj.ApplyModifiedProperties();
+        });
 
-        //root.Query(classes: new string[] { "test" }).ForEach((preview) => { preview.Add(CreateModuleUI(preview.name)); });
+        targetAudioField.RegisterValueChangedCallback(evt => {
+            targetAudio.objectReferenceValue = evt.newValue;
+            serObj.ApplyModifiedProperties();
+        });
+
         return root;
     }
 
-    
+    public void UpdateTargetField(StepObject.TargetType targetType, ObjectField targetField) {
+        switch (targetType) {
+            case StepObject.TargetType.Object:
+                targetField.objectType = typeof(GameObject);
+                targetField.label = "Target Object";
+                break;
+            case StepObject.TargetType.Slider:
+                targetField.objectType = typeof(Slider);
+                targetField.label = "Target Slider";
+                break;
+            default:
+                break;
+        }
+    }
 
     //public VisualElement CreateModuleUI(string moduleName) {
 

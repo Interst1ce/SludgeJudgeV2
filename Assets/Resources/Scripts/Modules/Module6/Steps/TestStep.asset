@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3cf82279c9dbb48a30984fa129de36, type: 3}
   m_Name: TestStep
   m_EditorClassIdentifier: 
-  targets:
-  - type: 0
+  newTarget:
+    type: 0
     objectTarget: {fileID: 0}
     sliderTarget: {fileID: 0}
     targetStep: 0
@@ -22,6 +22,5 @@ MonoBehaviour:
     extensions:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+  targets: []
   questions: []
