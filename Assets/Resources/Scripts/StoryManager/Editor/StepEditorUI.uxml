@@ -8,8 +8,16 @@
                 <uie:ObjectField label="Target Object" name="target" allow-scene-objects="true" />
                 <uie:ObjectField label="Target Animation" name="targetAnim" />
                 <uie:ObjectField label="Target Audio" name="targetAudio" />
-                <ui:Button text="Button" />
+                <ui:Button text="Add Step" name="createStep" />
             </ui:Foldout>
+        </ui:VisualElement>
+        <ui:VisualElement style="height: auto; flex-grow: 1;">
+            <ui:Foldout text="Foldout">
+                <ui:Label text="Label">
+                    <ui:Button text="Button" style="position: relative; top: auto; left: 50%; width: 10%; height: auto;" />
+                </ui:Label>
+            </ui:Foldout>
+            <uie:PropertyField name="targetExtensions" label="Extensions" style="flex-grow: 1;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 
-[CustomEditor(typeof(StepObject))]
+//[CustomEditor(typeof(StepObject))]
 public class StepEditorUI : Editor {
     VisualElement rootElement;
     VisualTreeAsset visualTree;
@@ -28,6 +28,7 @@ public class StepEditorUI : Editor {
         targetAnimField.objectType = typeof(AnimationClip);
         var targetAudioField = root.Q<ObjectField>("targetAudio");
         targetAudioField.objectType = typeof(AudioClip);
+        var targetExtensionsField = root.Q<PropertyField>("targetExtensions");
 
         ScriptableObject selObj = Selection.activeObject as ScriptableObject;
         SerializedObject serObj = new SerializedObject(selObj);
@@ -39,8 +40,12 @@ public class StepEditorUI : Editor {
         var tType = newTarget.FindPropertyRelative("type");
         var targetAnim = newTarget.FindPropertyRelative("targetAnim");
         var targetAudio = newTarget.FindPropertyRelative("targetAudio");
+        var targetExtensions = newTarget.FindPropertyRelative("extensions");
 
         UpdateTargetField((StepObject.TargetType)tType.enumValueIndex,targetField);
+        stepTargetField.value = stepTarget.intValue;
+        targetAnimField.value = targetAnim.objectReferenceValue;
+        targetAudioField.value = targetAudio.objectReferenceValue;
 
         stepTargetField.RegisterValueChangedCallback(evt => {
             stepTarget.intValue = evt.newValue;
