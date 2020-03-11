@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuestionManagerV2 : MonoBehaviour {
     public List<Question> questions;
+    Dictionary<Vector2Int,Question> questionDict; //might do list<list<question>> instead
 
     GameObject qAPanel;
     GameObject questionPanel;
@@ -18,17 +19,27 @@ public class QuestionManagerV2 : MonoBehaviour {
     AudioClip incorrectSound;
 
     private void Awake() {
+        int indexOffset = 0;
+        int prevIndex = 0;
+        foreach(Question question in questions) {
+            if (question.step == prevIndex) indexOffset++; else indexOffset = 0;
+            questionDict.Add(new Vector2Int(question.step,indexOffset), question);
+            prevIndex = question.step;
+        }
         if (buttonSound != null) {
             audioSource = qAPanel.AddComponent<AudioSource>();
             audioSource.clip = buttonSound;
         }
+        if (qAPanel != null) questionPanel = qAPanel.transform.GetChild(0).gameObject;
     }
     void Start() {
 
     }
 
-    public void StartQuest(int step) {
-
+    public void StartQuest(int step, int offset) {
+        answerLayout = questionDict[new Vector2Int(step,offset)].answerLayout;
+        Instantiate(answerLayout,qAPanel.transform);
+        UpdateUI();
     }
 
     public void CheckAnswer(int choice) {
