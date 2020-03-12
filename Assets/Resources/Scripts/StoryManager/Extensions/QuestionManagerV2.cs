@@ -39,7 +39,7 @@ public class QuestionManagerV2 : MonoBehaviour {
     public void StartQuest(int step, int offset) {
         answerLayout = questionDict[new Vector2Int(step,offset)].answerLayout;
         Instantiate(answerLayout,qAPanel.transform);
-        UpdateUI();
+        UpdateUI(1);
     }
 
     public void CheckAnswer(int choice) {
@@ -60,7 +60,7 @@ public class QuestionManagerV2 : MonoBehaviour {
         audioSource.clip = buttonSound;
     }
 
-    IEnumerator UpdateUI() {
+    IEnumerator UpdateUI(float targetTIme,float delay = 0,bool fadeIn = true) {
         yield return null;
     }
 
