@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
 {
+    #region GlbVar
     //Sludge Judge shortened to sJ often
 
     //Variables to begin the scenario
@@ -30,6 +31,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
     [SerializeField] Transform sludgeJudgeFlash;
     [SerializeField] Transform sludgeJudgeSludge;
     [SerializeField] Transform sludgeSampleFlash;
+    [SerializeField] Transform sludgeJudgeAlt;
     [SerializeField] Transform mainTank;
     [SerializeField] Transform insertionPoint;
     [SerializeField] Transform tankWaterTop;
@@ -114,7 +116,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
     //[SerializeField] Quaternion cbStartRot;
 
     CapsuleCollider sJCollider;
-
+    #endregion GlbVar
 
     // Start is called before the first frame update
     void Start() {
@@ -159,6 +161,9 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                 waitTime = 0;
         } else {
             switch (step) {
+                case -1:
+                    ModelIntro();
+                    break;
                 case 0:
                     IntroOne();
                     break;
@@ -229,8 +234,11 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
 
     void ModelIntro() {
         //show both sludge judge models
-        //play audio
-        //that's it really
+        if (!restarted) {
+            //play audio
+            //waitTime += yes
+        }
+        step++;
     }
 
     void IntroOne() {
