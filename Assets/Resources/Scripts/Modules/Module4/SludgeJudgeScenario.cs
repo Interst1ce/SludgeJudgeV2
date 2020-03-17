@@ -161,9 +161,6 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                 waitTime = 0;
         } else {
             switch (step) {
-                case -1:
-                    ModelIntro();
-                    break;
                 case 0:
                     IntroOne();
                     break;
@@ -230,15 +227,6 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         }
 
         GlobalFunctions.UpdatePrevMousePos();
-    }
-
-    void ModelIntro() {
-        //show both sludge judge models
-        if (!restarted) {
-            //play audio
-            //waitTime += yes
-        }
-        step++;
     }
 
     void IntroOne() {
@@ -587,6 +575,8 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         TextMeshPro_time[restarts].gameObject.SetActive(false);
         TextMeshPro_reading[restarts].gameObject.SetActive(false);
     }
+
+    //UPDATE TO SHOW BOTH SLUDGE JUDGE MODELS
 
     //Focuses on Sludge Judge, then returns to normal
     IEnumerator SludgeJudgeFocus() {
