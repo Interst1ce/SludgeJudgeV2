@@ -3643,7 +3643,6 @@ MonoBehaviour:
   tankStartRot: {x: 0, y: 0, z: 0, w: 0}
   cbStartPoint: {x: 0, y: 0, z: 0}
   cbStartScale: {x: 0, y: 0, z: 0}
-  sludgeJudgeAltAnim: {fileID: 0}
 --- !u!1 &638789397
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,6 +6683,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 76ec2333cec25584685545df9d132335, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ec2333cec25584685545df9d132335, type: 3}
 --- !u!4 &1200313806 stripped
@@ -9524,6 +9527,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sludge_Judge_3
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 30ef7096f933c174591d1aba7310abfc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30ef7096f933c174591d1aba7310abfc, type: 3}
 --- !u!4 &1730931948 stripped
@@ -10243,13 +10251,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832747580}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.5}
+  m_LocalRotation: {x: -0.70710677, y: -0.00000004683398, z: -0.00000003329745, w: -0.7071068}
   m_LocalPosition: {x: 7.74, y: 3.14, z: -0.045}
-  m_LocalScale: {x: 2.8, y: 2.8, z: 0.934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1111136881}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -180, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: -270, y: -180, z: -180}
 --- !u!1 &1855978968
 GameObject:
   m_ObjectHideFlags: 0

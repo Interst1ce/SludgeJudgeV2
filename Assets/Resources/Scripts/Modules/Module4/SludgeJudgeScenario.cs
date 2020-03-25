@@ -115,9 +115,6 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
     [SerializeField] Vector3 cbStartScale;
     //[SerializeField] Quaternion cbStartRot;
 
-    [SerializeField]
-    Animation sludgeJudgeAltAnim;
-
     CapsuleCollider sJCollider;
     #endregion GlbVar
 
@@ -592,6 +589,9 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         //Move the sludge judge into focus and "zoom out" the tank
         while (true) {
             currentTime = Time.time - timeStart;
+            sludgeJudge.position = Vector3.Lerp(sJSampledPoint.position,sJExplainPoint.position,currentTime / sJExamineTransTime);
+            sludgeJudge.localScale = Vector3.Lerp(sJSampledPoint.localScale,sJExplainPoint.localScale,currentTime / sJExamineTransTime);
+            sludgeJudge.rotation = Quaternion.Lerp(sJSampledPoint.rotation,sJExplainPoint.rotation,currentTime / sJExamineTransTime);
             sludgeJudgeAlt.position = Vector3.Lerp(sJSampledPoint.position,sJExplainPoint.position,currentTime / sJExamineTransTime);
             sludgeJudgeAlt.localScale = Vector3.Lerp(sJSampledPoint.localScale,sJExplainPoint.localScale,currentTime / sJExamineTransTime);
             sludgeJudgeAlt.rotation = Quaternion.Lerp(sJSampledPoint.rotation,sJExplainPoint.rotation,currentTime / sJExamineTransTime);
@@ -607,13 +607,12 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
 
             yield return null;
         }
+        //Play animation
+        sludgeJudgeAlt.gameObject.GetComponent<Animator>().Play("Assemble");
         //Play audio
         if (!restarted) {
             audioPlay.PlayAudio(); Debug.Log("AUDIO CLIP 2");
             yield return new WaitForSeconds(audioPlay.Tracks[1].length - 2);
-        }
-        if(sludgeJudgeAltAnim != null) {
-            sludgeJudgeAlt.gameObject.GetComponent<Animator>().Play("Assemble");
         }
         //Fade plane out
         StartCoroutine(FadeDarkPlane(0));
@@ -621,6 +620,9 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         timeStart = Time.time;
         while (true) {
             currentTime = Time.time - timeStart;
+            sludgeJudge.position = Vector3.Lerp(sJExplainPoint.position,sJSampledPoint.position,currentTime / sJExamineTransTime);
+            sludgeJudge.localScale = Vector3.Lerp(sJExplainPoint.localScale,sJSampledPoint.localScale,currentTime / sJExamineTransTime);
+            sludgeJudge.rotation = Quaternion.Lerp(sJExplainPoint.rotation,sJSampledPoint.rotation,currentTime / sJExamineTransTime);
             sludgeJudgeAlt.position = Vector3.Lerp(sJExplainPoint.position,sJSampledPoint.position,currentTime / sJExamineTransTime);
             sludgeJudgeAlt.localScale = Vector3.Lerp(sJExplainPoint.localScale,sJSampledPoint.localScale,currentTime / sJExamineTransTime);
             sludgeJudgeAlt.rotation = Quaternion.Lerp(sJExplainPoint.rotation,sJSampledPoint.rotation,currentTime / sJExamineTransTime);
