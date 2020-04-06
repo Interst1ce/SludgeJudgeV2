@@ -229,6 +229,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
         GlobalFunctions.UpdatePrevMousePos();
     }
 
+    //Combine IntroOne and IntroTwo into a single audio clip for Intro Audio
     void IntroOne() {
         sludgeLevels = Mathf.Lerp(sludgeAmount.x,sludgeAmount.y,UnityEngine.Random.Range(0f,1f));
 

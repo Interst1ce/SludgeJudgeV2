@@ -11,9 +11,16 @@ using Input = GoogleARCore.InstantPreviewInput;
 [RequireComponent(typeof(AudioSource))]
 public class StoryManager : MonoBehaviour {
 
-    public enum TapOrDrag {
+    public enum Interaction {
         Tap,
-        Drag
+        Swipe
+    }
+    public enum SwipeDirection {
+        Up,
+        Down,
+        Left,
+        Right,
+        No
     }
     public enum ManipulationType {
         Transform,
@@ -43,6 +50,8 @@ public class StoryManager : MonoBehaviour {
     public AudioClip missTapAudio;
     [SerializeField]
     public SoundEffect backgroundAudioStart;
+    [HideInInspector]
+    public SwipeDirection swipeDir;
 
     //[SerializeField]
     //public GameObject slider;
@@ -134,10 +143,14 @@ public class StoryManager : MonoBehaviour {
             }
         }
 
-        //TODO: Update the way audio sources are handled to prevent destruction of necessary background audio
+        //input detection, type of check depends on current step's selected interaction type,
+        //if(swipeDir == steps[currentStep].swipeDir)
+
+
 
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
+                //call coroutine that detects swipe
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit)) {
@@ -223,6 +236,39 @@ public class StoryManager : MonoBehaviour {
                 }
             }
         }
+    }
+
+    //If checking for tap pass in Vector2.zero for swipeDist, needed because of compiler nonsense
+    IEnumerator DetectInput(Interaction toCheck, Vector2 swipeDist) {
+        float time = Time.time;
+        float timeDelta = 0;
+
+        Vector2 startPos = Vector2.zero;
+        Vector2 curPos;
+        Vector2 posDelta;
+
+        swipeDir = SwipeDirection.No;
+        startPos = Input.mousePosition;
+
+        do {
+            timeDelta = Time.time - time;
+            if (!Input.GetMouseButton(0)) break;
+            curPos = Input.mousePosition;
+            posDelta = curPos - startPos;
+            if (Mathf.Abs(posDelta.x) > Mathf.Abs(swipeDist.x)) {
+                if (Mathf.Sign(posDelta.x) == -1) {
+                    yield return swipeDir = SwipeDirection.Left;
+                }else if(Mathf.Sign(posDelta.x) == 1) {
+                    yield return swipeDir = SwipeDirection.Right;
+                }
+            }else if(Mathf.Abs(posDelta.y) > Mathf.Abs(swipeDist.y)) {
+                if (Mathf.Sign(posDelta.y) == -1) {
+                    yield return swipeDir = SwipeDirection.Down;
+                } else if (Mathf.Sign(posDelta.y) == 1) {
+                    yield return swipeDir = SwipeDirection.Up;
+                }
+            }
+        } while (timeDelta < 0.5f);
     }
 
     IEnumerator ExecuteAfterTime(float time) {
