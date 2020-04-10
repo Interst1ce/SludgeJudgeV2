@@ -170,6 +170,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                     break;
 
                 case 2:
+                    //skip
                     indicator.gameObject.SetActive(true);
                     step++;
                     break;
@@ -179,6 +180,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                     break;
 
                 case 4:
+                    //skip
                     SludgeJudgeFlash(true);
                     step++;
                     break;
@@ -188,6 +190,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                     break;
 
                 case 6:
+                    //combine audio with step 5 and skip
                     ClipboardDelay();
                     break;
 
@@ -196,6 +199,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                     break;
 
                 case 8:
+                    //maybe use QuestionManger to replace this
                     ClipboardKeypadInput();
                     break;
 
@@ -208,6 +212,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                     break;
 
                 case 11:
+                    //skip
                     dumpIndicator.gameObject.SetActive(true);
                     step++;
                     break;

@@ -2951,7 +2951,7 @@ PrefabInstance:
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: steps.Array.size
-      value: 13
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -2994,6 +2994,12 @@ PrefabInstance:
       propertyPath: steps.Array.data[1].targets.Array.data[0].objectTarget
       value: 
       objectReference: {fileID: 1675271427}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].targets.Array.data[0].targetAnim
+      value: 
+      objectReference: {fileID: 9183261346748455465, guid: 7c6cce7e9533f56449dbb86c3c43a0e4,
+        type: 3}
     - target: {fileID: 4073097892373886361, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: m_LocalPosition.x
