@@ -1845,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlowColor: {r: 1, g: 0.972549, b: 0.27058825, a: 0}
+  GlowColor: {r: 1, g: 1, b: 0.27058825, a: 0}
   LerpFactor: 10
 --- !u!65 &580146452
 BoxCollider:
