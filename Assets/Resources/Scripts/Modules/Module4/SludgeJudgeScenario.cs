@@ -175,7 +175,7 @@ public class SludgeJudgeScenario : MonoBehaviour/*, ITrackableEventHandler*/
                     step++;
                     break;
 
-                case 3:
+                case 3: //step 0
                     SJFirstMove();
                     break;
 
