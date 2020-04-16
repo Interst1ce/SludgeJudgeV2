@@ -3464,6 +3464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DetectedPlanePrefab: {fileID: 1654175882956584, guid: 6a35c744e5010405c847fad90282d2be,
     type: 3}
+  scene: {fileID: 1785575260}
+  planesInScene: []
 --- !u!114 &620138075
 MonoBehaviour:
   m_ObjectHideFlags: 0

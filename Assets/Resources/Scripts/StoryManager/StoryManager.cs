@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using GoogleARCore.Examples.Common;
 
 #if UNITY_EDITOR
 using Input = GoogleARCore.InstantPreviewInput;
@@ -146,7 +147,15 @@ public class StoryManager : MonoBehaviour {
         //input detection, type of check depends on current step's selected interaction type,
         //if(swipeDir == steps[currentStep].swipeDir)
 
-
+        List<GameObject> planes = gameObject.GetComponent<DetectedPlaneGenerator>().planesInScene;
+        GameObject scene = gameObject.GetComponent<ARController>().sceneObject;
+        if (scene.activeSelf) {
+            foreach (GameObject obj in planes) {
+                obj.GetComponent<MeshRenderer>().enabled = false;
+                obj.GetComponent<DetectedPlaneGenerator>().enabled = false;
+            }
+            gameObject.GetComponent<DetectedPlaneGenerator>().enabled = false;
+        }
 
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {

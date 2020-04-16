@@ -1136,7 +1136,7 @@ PrefabInstance:
     - target: {fileID: 6124713439420169190, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6124713439420169191, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
@@ -2649,6 +2649,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 860529044574038088, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: scene
+      value: 
+      objectReference: {fileID: 734089542}
     - target: {fileID: 860529044574038095, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: sceneObject

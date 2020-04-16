@@ -18,8 +18,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleARCore.Examples.Common
-{
+namespace GoogleARCore.Examples.Common {
     using System.Collections.Generic;
     using GoogleARCore;
     using UnityEngine;
@@ -27,8 +26,7 @@ namespace GoogleARCore.Examples.Common
     /// <summary>
     /// Manages the visualization of detected planes in the scene.
     /// </summary>
-    public class DetectedPlaneGenerator : MonoBehaviour
-    {
+    public class DetectedPlaneGenerator : MonoBehaviour {
         /// <summary>
         /// A prefab for tracking and visualizing detected planes.
         /// </summary>
@@ -40,28 +38,35 @@ namespace GoogleARCore.Examples.Common
         /// </summary>
         private List<DetectedPlane> m_NewPlanes = new List<DetectedPlane>();
 
+        [SerializeField]
+        private GameObject scene;
+
+        public List<GameObject> planesInScene = new List<GameObject>();
         /// <summary>
         /// The Unity Update method.
         /// </summary>
-        public void Update()
-        {
+        public void Update() {
             // Check that motion tracking is tracking.
-            if (Session.Status != SessionStatus.Tracking)
-            {
+            if (Session.Status != SessionStatus.Tracking && scene.activeSelf) {
                 return;
-            }
-
+            }/*else if (scene.activeSelf) {
+                foreach (GameObject obj in planesInScene) {
+                    obj.GetComponent<Renderer>().enabled = false;
+                    obj.GetComponent<DetectedPlaneGenerator>().enabled = false;
+                }
+                gameObject.GetComponent<DetectedPlaneGenerator>().enabled = false;
+            }*/
             // Iterate over planes found in this frame and instantiate corresponding GameObjects to
             // visualize them.
-            Session.GetTrackables<DetectedPlane>(m_NewPlanes, TrackableQueryFilter.New);
-            for (int i = 0; i < m_NewPlanes.Count; i++)
-            {
+            Session.GetTrackables<DetectedPlane>(m_NewPlanes,TrackableQueryFilter.New);
+            for (int i = 0; i < m_NewPlanes.Count; i++) {
                 // Instantiate a plane visualization prefab and set it to track the new plane. The
                 // transform is set to the origin with an identity rotation since the mesh for our
                 // prefab is updated in Unity World coordinates.
                 GameObject planeObject =
-                    Instantiate(DetectedPlanePrefab, Vector3.zero, Quaternion.identity, transform);
+                    Instantiate(DetectedPlanePrefab,Vector3.zero,Quaternion.identity,transform);
                 planeObject.GetComponent<DetectedPlaneVisualizer>().Initialize(m_NewPlanes[i]);
+                planesInScene.Add(planeObject);
             }
         }
     }
