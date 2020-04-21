@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using GoogleARCore;
+using GoogleARCore.Examples.Common;
 
 #if UNITY_EDITOR
 using Input = GoogleARCore.InstantPreviewInput;
@@ -76,6 +77,7 @@ public class ARController : MonoBehaviour {
                         sceneObject.transform.Rotate(0,180,0,Space.Self);
                         sceneObject.transform.parent = anchor1.transform;
                         //Debug.Log("Scene object activated and placed at hit position");
+                        gameObject.GetComponent<DetectedPlaneGenerator>().HidePlanes();
                     }
                 }
             }

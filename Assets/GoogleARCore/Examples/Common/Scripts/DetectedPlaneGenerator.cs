@@ -41,13 +41,15 @@ namespace GoogleARCore.Examples.Common {
         [SerializeField]
         private GameObject scene;
 
+        private bool hidePlanes = false;
+
         public List<GameObject> planesInScene = new List<GameObject>();
         /// <summary>
         /// The Unity Update method.
         /// </summary>
         public void Update() {
             // Check that motion tracking is tracking.
-            if (Session.Status != SessionStatus.Tracking && scene.activeSelf) {
+            if (Session.Status != SessionStatus.Tracking) {
                 return;
             }/*else if (scene.activeSelf) {
                 foreach (GameObject obj in planesInScene) {
@@ -58,6 +60,8 @@ namespace GoogleARCore.Examples.Common {
             }*/
             // Iterate over planes found in this frame and instantiate corresponding GameObjects to
             // visualize them.
+            if (hidePlanes) return;
+
             Session.GetTrackables<DetectedPlane>(m_NewPlanes,TrackableQueryFilter.New);
             for (int i = 0; i < m_NewPlanes.Count; i++) {
                 // Instantiate a plane visualization prefab and set it to track the new plane. The
@@ -67,6 +71,17 @@ namespace GoogleARCore.Examples.Common {
                     Instantiate(DetectedPlanePrefab,Vector3.zero,Quaternion.identity,transform);
                 planeObject.GetComponent<DetectedPlaneVisualizer>().Initialize(m_NewPlanes[i]);
                 planesInScene.Add(planeObject);
+                Debug.Log(planesInScene.Count);
+            }
+        }
+
+        public void HidePlanes(bool hide = true) {
+            hidePlanes = hide;
+
+            foreach (GameObject obj in planesInScene) {
+                obj.GetComponent<MeshRenderer>().enabled = false;
+                //obj.GetComponent<DetectedPlaneGenerator>().enabled = false;
+                obj.SetActive(false);
             }
         }
     }

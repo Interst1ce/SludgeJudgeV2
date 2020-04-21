@@ -135,7 +135,7 @@ public class StoryManager : MonoBehaviour {
                     CallPause();
                 }
             } else {
-                StartCoroutine(ExecuteAfterTime(pauseDelay));
+                StartCoroutine(PauseAfterDelay(pauseDelay));
             }
         }
         if (!audioSource.isPlaying && introPlayed && currentStep == 0) {
@@ -146,7 +146,7 @@ public class StoryManager : MonoBehaviour {
 
         //input detection, type of check depends on current step's selected interaction type,
         //if(swipeDir == steps[currentStep].swipeDir)
-
+        /*
         List<GameObject> planes = gameObject.GetComponent<DetectedPlaneGenerator>().planesInScene;
         GameObject scene = gameObject.GetComponent<ARController>().sceneObject;
         if (scene.activeSelf) {
@@ -155,7 +155,7 @@ public class StoryManager : MonoBehaviour {
                 obj.GetComponent<DetectedPlaneGenerator>().enabled = false;
             }
             gameObject.GetComponent<DetectedPlaneGenerator>().enabled = false;
-        }
+        }*/
 
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
@@ -163,17 +163,11 @@ public class StoryManager : MonoBehaviour {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit)) {
-                    GlowObjectCmd glow = steps[currentStep + 1].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
-                    if (glow != null) {
-                        glow.StartCoroutine("GlowPulse");
-                    } else {
-                        GlowObjectCmd[] glows = steps[currentStep + 1].targets[0].objectTarget.GetComponentsInChildren<GlowObjectCmd>();
-                        foreach (GlowObjectCmd childGlow in glows) childGlow.StartCoroutine("GlowPulse");
-                    }
                     //GameObject.Find("TextMeshPro Text").GetComponent<TextMeshProUGUI>().text = hit.transform.gameObject.name;
 
                     Animator lastStepAnim = null;
                     String lastAnimName = "";
+                    float glowDelay = 0;
 
                     foreach (Step elem in steps) {
                         foreach (Target target in elem.targets) {
@@ -203,6 +197,7 @@ public class StoryManager : MonoBehaviour {
                                 if (target.targetAudio != null) {
                                     //play audio for the step
                                     PlayAudio(target.targetAudio);
+                                    glowDelay = target.targetAudio.length;
                                 }
                                 /*if (elem.soundEffects != null) {
                                     PlaySoundEffects(elem.soundEffects);
@@ -242,6 +237,13 @@ public class StoryManager : MonoBehaviour {
                             }
                         }
                     }
+                    GlowObjectCmd glow = steps[currentStep + 1].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
+                    if (glow != null) {
+                        StartCoroutine(GlowAfterDelay(glow,glowDelay));
+                    } else {
+                        GlowObjectCmd[] glows = steps[currentStep + 1].targets[0].objectTarget.GetComponentsInChildren<GlowObjectCmd>();
+                        foreach (GlowObjectCmd childGlow in glows) StartCoroutine(GlowAfterDelay(childGlow,glowDelay));
+                    }
                 }
             }
         }
@@ -280,11 +282,14 @@ public class StoryManager : MonoBehaviour {
         } while (timeDelta < 0.5f);
     }
 
-    IEnumerator ExecuteAfterTime(float time) {
+    IEnumerator GlowAfterDelay(GlowObjectCmd glowTarget,float time) {
         yield return new WaitForSeconds(time);
-        //Invoke("CallPause", outroAudio.length);
-        CallPause();
+        glowTarget.StartCoroutine("GlowPulse");
+    }
 
+    IEnumerator PauseAfterDelay(float time) {
+        yield return new WaitForSeconds(time);
+        CallPause();
     }
 
     public void CallPause() {
