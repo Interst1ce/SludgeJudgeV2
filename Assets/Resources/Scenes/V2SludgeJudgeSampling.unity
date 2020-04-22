@@ -2952,7 +2952,7 @@ PrefabInstance:
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: steps.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -2997,11 +2997,21 @@ PrefabInstance:
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: steps.Array.data[5].otherFunctions.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[2].otherFunctions.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
@@ -3050,7 +3060,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[2].targets.Array.data[0].targetAnim
       value: 
-      objectReference: {fileID: 3824725605348907695, guid: 7c6cce7e9533f56449dbb86c3c43a0e4,
+      objectReference: {fileID: -7398596245928073148, guid: 7c6cce7e9533f56449dbb86c3c43a0e4,
         type: 3}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -3083,7 +3093,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[5].targets.Array.data[0].targetAnim
       value: 
-      objectReference: {fileID: -5787127029581026711, guid: 7c6cce7e9533f56449dbb86c3c43a0e4,
+      objectReference: {fileID: 1615023158368410693, guid: 7c6cce7e9533f56449dbb86c3c43a0e4,
         type: 3}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -3119,7 +3129,7 @@ PrefabInstance:
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: MultiAnimTrigger, Assembly-CSharp
+      value: MultiAnim, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -3164,7 +3174,7 @@ PrefabInstance:
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: steps.Array.data[5].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: MultiAnimTrigger, Assembly-CSharp
+      value: MultiAnim, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -3206,6 +3216,109 @@ PrefabInstance:
       propertyPath: steps.Array.data[6].targets.Array.data[0].targetStep
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 620138077}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayMultiAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: MultiAnim, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[2].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 18a4e6cc3eeac004ebc2e3b17b786ad2, type: 3}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[2].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 620138077}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[2].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayMultiAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[2].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[2].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: MultiAnimTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[2].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: bd0b36ccb71bef94b8d7c8d1414b2925,
+        type: 2}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 620138077}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayMultiAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: MultiAnim, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[6].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c37308e9beb5a848b2793a90259588a,
+        type: 2}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[5].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c37308e9beb5a848b2793a90259588a,
+        type: 2}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: outroAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 18a4e6cc3eeac004ebc2e3b17b786ad2, type: 3}
     - target: {fileID: 4073097892373886361, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8703,6 +8816,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b1d183643a39b0c43afb697ae22eb967, type: 2}
+    - target: {fileID: 7902083516420953490, guid: 62a522116c99e334cb53ae0107a8029e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: adf0d7e6407517e4ea4b0b55c95c60e9, type: 2}
     - target: {fileID: 8639534791419377450, guid: 62a522116c99e334cb53ae0107a8029e,
         type: 3}
       propertyPath: m_StaticEditorFlags

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33701cfcfb7ad824a92b8fd3eb78a4d7, type: 3}
-  m_Name: Step31_MultiAnim
+  m_Name: SJ_Step1_MultiAnim
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: Sample_Beaker
-    animTitle: Spin Up
+  - targetObjPath: Sludge_Judge_1
+    animTitle: Fill SJ

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33701cfcfb7ad824a92b8fd3eb78a4d7, type: 3}
-  m_Name: Step27_MultiAnim
+  m_Script: {fileID: 11500000, guid: dbdca80338ab6a8459fa1e3909583bf2, type: 3}
+  m_Name: pH_Step33_MultiAnimTrigger
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: 100_mL_Graduated_Cylinder
-    animTitle: Fill
+  - targetObjPath: Sample_Beaker
+    animTrigger: Stop Spin
