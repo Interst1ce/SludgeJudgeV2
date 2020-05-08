@@ -43,7 +43,7 @@ public class QuestionManagerV2 : MonoBehaviour {
     }
 
     public void CheckAnswer(int choice) {
-        audioSource.Play();
+        PlayButtonSound();
         if (choice == 0) { //change 0 when correctAnswer variable is available
             if (correctSound != null) {
                 audioSource.clip = correctSound;
@@ -57,7 +57,27 @@ public class QuestionManagerV2 : MonoBehaviour {
                 audioSource.Play();
             }
         }
-        audioSource.clip = buttonSound;
+    }
+
+    public void CheckNumpad(int input, int target) {
+        PlayButtonSound();
+        if (input == target) {
+            if (correctSound != null) {
+                audioSource.clip = correctSound;
+                audioSource.Play();
+            }
+            Invoke("DisableUI",1);
+        } else {
+            if(incorrectSound != null) {
+                audioSource.clip = incorrectSound;
+                audioSource.Play();
+            }
+        }
+    }
+
+    public void PlayButtonSound() {
+        if (audioSource.clip != buttonSound) audioSource.clip = buttonSound;
+        audioSource.Play();
     }
 
     IEnumerator UpdateUI(float targetTIme,float delay = 0,bool fadeIn = true) {
