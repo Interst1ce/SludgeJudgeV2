@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 57efa6959a287314a9e973dacd69ccd0
 ModelImporter:
-  serializedVersion: 25
+  serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
@@ -14,7 +14,7 @@ ModelImporter:
     second: Pour
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -73,7 +73,7 @@ ModelImporter:
       name: Fill
       takeName: Take 001
       internalID: 8208769827818943773
-      firstFrame: 3670
+      firstFrame: 3600
       lastFrame: 3790
       wrapMode: 0
       orientationOffsetY: 0
@@ -134,6 +134,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -164,7 +165,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -182,8 +182,10 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

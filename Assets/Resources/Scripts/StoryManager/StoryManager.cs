@@ -126,6 +126,9 @@ public class StoryManager : MonoBehaviour {
     //TODO? Turn intros/outros/looping background audio into scriptable objects that are played through extension(s)
     //TODO? Break all non-narration audio out into scriptable objects to be played through extension(s)
 
+    private Coroutine lastGlow;
+    private GlowObjectCmd glow;
+
     public void Update() {
         if (currentStep == steps.Count && !audioSource.isPlaying && finished == false /*&& !qAPanel.activeSelf*/) {
             finished = true;
@@ -144,18 +147,6 @@ public class StoryManager : MonoBehaviour {
             }
         }
 
-        //input detection, type of check depends on current step's selected interaction type,
-        //if(swipeDir == steps[currentStep].swipeDir)
-        /*
-        List<GameObject> planes = gameObject.GetComponent<DetectedPlaneGenerator>().planesInScene;
-        GameObject scene = gameObject.GetComponent<ARController>().sceneObject;
-        if (scene.activeSelf) {
-            foreach (GameObject obj in planes) {
-                obj.GetComponent<MeshRenderer>().enabled = false;
-                obj.GetComponent<DetectedPlaneGenerator>().enabled = false;
-            }
-            gameObject.GetComponent<DetectedPlaneGenerator>().enabled = false;
-        }*/
 
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began) {
@@ -171,7 +162,15 @@ public class StoryManager : MonoBehaviour {
 
                     foreach (Step elem in steps) {
                         foreach (Target target in elem.targets) {
-                            if (hit.transform.gameObject == target.objectTarget && currentStep == steps.IndexOf(elem) && !audioSource.isPlaying && !audioSource.loop && (lastStepAnim == null || lastStepAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !lastStepAnim.IsInTransition(0))) {
+                            if (hit.transform.gameObject == target.objectTarget &&
+                                currentStep == steps.IndexOf(elem) &&
+                                !audioSource.isPlaying &&
+                                !audioSource.loop &&
+                                (lastStepAnim == null || lastStepAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !lastStepAnim.IsInTransition(0))) {
+
+                                InQuestion:
+                                if (QuestionManagerV2.inQuestion) goto InQuestion;
+
                                 currentStep = target.targetStep;
                                 /*AudioSource[] audioSources = gameObject.GetComponents<AudioSource>();
                                 foreach (AudioSource audioSource in audioSources) {
@@ -179,9 +178,9 @@ public class StoryManager : MonoBehaviour {
                                         Destroy(audioSource);
                                     } else this.audioSource = audioSource;
                                 }*/
-                                for (int j = 0; j < 5; j++) {
-                                    StopCoroutine("GlowPulse");
-                                }
+                                if (lastGlow != null) StopCoroutine(lastGlow);
+                                if(glow != null) glow.StartCoroutine("GlowOff");
+
                                 if (target.targetAnim != null) {
                                     //play the animation for the step
                                     Animator animator = hit.transform.gameObject.GetComponent<Animator>();
@@ -198,6 +197,7 @@ public class StoryManager : MonoBehaviour {
                                     //play audio for the step
                                     PlayAudio(target.targetAudio);
                                     glowDelay = target.targetAudio.length;
+                                    QuestionManagerV2.audioDelay = glowDelay;
                                 }
                                 /*if (elem.soundEffects != null) {
                                     PlaySoundEffects(elem.soundEffects);
@@ -237,11 +237,11 @@ public class StoryManager : MonoBehaviour {
                             }
                         }
                     }
-                    GlowObjectCmd glow = steps[currentStep + 1].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
+                    glow = steps[currentStep].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
                     if (glow != null) {
-                        StartCoroutine(GlowAfterDelay(glow,glowDelay));
+                        lastGlow = StartCoroutine(GlowAfterDelay(glow,glowDelay));
                     } else {
-                        GlowObjectCmd[] glows = steps[currentStep + 1].targets[0].objectTarget.GetComponentsInChildren<GlowObjectCmd>();
+                        GlowObjectCmd[] glows = steps[currentStep].targets[0].objectTarget.GetComponentsInChildren<GlowObjectCmd>();
                         foreach (GlowObjectCmd childGlow in glows) StartCoroutine(GlowAfterDelay(childGlow,glowDelay));
                     }
                 }
@@ -284,7 +284,7 @@ public class StoryManager : MonoBehaviour {
 
     IEnumerator GlowAfterDelay(GlowObjectCmd glowTarget,float time) {
         yield return new WaitForSeconds(time);
-        glowTarget.StartCoroutine("GlowPulse");
+        lastGlow = glowTarget.StartCoroutine("GlowPulse");
     }
 
     IEnumerator PauseAfterDelay(float time) {

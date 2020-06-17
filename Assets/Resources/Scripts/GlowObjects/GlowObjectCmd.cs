@@ -46,6 +46,10 @@ public class GlowObjectCmd : MonoBehaviour {
             i++;
         }
     }
+    IEnumerator GlowOff() {
+        TurnOff();
+        return null;
+    }
 
     /// <summary>
     /// Update color, disable self if we reach our target color.
