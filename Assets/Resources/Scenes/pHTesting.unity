@@ -765,9 +765,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - {fileID: 11400000, guid: 45547016ef049664481d2303b5bcc071, type: 2}
+  qAPanel: {fileID: 0}
   buttonSound: {fileID: 0}
   correctSound: {fileID: 0}
   incorrectSound: {fileID: 0}
+--- !u!114 &239678133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239678130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc1183894e1d5447b5b9869f3445e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sampleBeaker: {fileID: 2027138479}
+  sampleBottle: {fileID: 1033769050}
+  beakerAnim: {fileID: 0}
+  bottleAnim: {fileID: 0}
 --- !u!114 &275746280 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6124713439722305773, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
@@ -1161,7 +1178,7 @@ PrefabInstance:
     - target: {fileID: 6124713439420169191, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 6124713439420169191, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
         type: 3}
