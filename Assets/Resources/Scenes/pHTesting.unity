@@ -782,9 +782,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sampleBeaker: {fileID: 2027138479}
-  sampleBottle: {fileID: 1033769050}
-  beakerAnim: {fileID: 0}
-  bottleAnim: {fileID: 0}
+  beakerAnims:
+  - {fileID: 1827226128182048838, guid: 8538361b76d859643af66a623e5e1912, type: 3}
+  - {fileID: -5405653242291790180, guid: 8538361b76d859643af66a623e5e1912, type: 3}
+  - {fileID: -998496362607748373, guid: 8538361b76d859643af66a623e5e1912, type: 3}
+  - {fileID: 3060872287085348379, guid: 8538361b76d859643af66a623e5e1912, type: 3}
 --- !u!114 &275746280 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6124713439722305773, guid: 2b79d0e782f7f4b4daf57c8cb5134bce,
@@ -4222,7 +4224,7 @@ PrefabInstance:
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
@@ -4237,23 +4239,22 @@ PrefabInstance:
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMultiAnim
+      value: PlayBeakerFill
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: MultiAnim, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 007416d7223e73f4c9531b039592d757,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
@@ -4268,19 +4269,18 @@ PrefabInstance:
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMultiAnim
+      value: PlayBeakerSpinUp
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: MultiAnim, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: e23c6e2b4f919044a8d0743dabb4e90b,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[30].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -4723,27 +4723,26 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[27].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1573283829}
+      objectReference: {fileID: 239678133}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[27].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMultiAnim
+      value: AnimFix
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[27].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[27].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 007416d7223e73f4c9531b039592d757,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[27].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: MultiAnim, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
@@ -4815,27 +4814,26 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1573283829}
+      objectReference: {fileID: 580146423}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayMultiAnim
+      value: Count
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: ead1156676f3f9a4b9ca64f19de77558,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: MultiAnimTrigger, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
@@ -4846,16 +4844,16 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 580146423}
+      objectReference: {fileID: 1573283829}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Count
+      value: TriggerBeakerSpinDown
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
@@ -4951,6 +4949,96 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[31].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 239678133}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AnimFix
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[26].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[27].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 239678133}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: AnimFix
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[28].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 239678133}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: AnimFix
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[32].otherFunctions.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3708785095353379234, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
@@ -5087,6 +5175,23 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9129926898942815977, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: sampleBeaker
+      value: 
+      objectReference: {fileID: 2027138479}
+    - target: {fileID: 9129926898942815977, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: beakerFill
+      value: 
+      objectReference: {fileID: 1827226128182048838, guid: c84166631efc2984ab113e08101cf87b,
+        type: 3}
+    - target: {fileID: 9129926898942815977, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: beakerSpinUp
+      value: 
+      objectReference: {fileID: -4207356549542103150, guid: c84166631efc2984ab113e08101cf87b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a579828f8802aca4882cee7bb8c23e9d, type: 3}
 --- !u!1 &3708637776207269820 stripped
