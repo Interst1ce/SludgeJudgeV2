@@ -66,14 +66,19 @@ public class QuestionManagerV2 : MonoBehaviour {
                 i++;
             }
             panel.Find("Zero").GetComponent<Button>().onClick.AddListener(delegate { UpdateNumInput(0); });
+            Debug.Log("Numpad Listeners Added");
         } else {
             int i = 0;
             foreach(Transform ansBut in answerLayout.transform) {
                 ansBut.GetComponent<Button>().onClick.AddListener(delegate { CheckAnswer(i); });
                 i++;
             }
+            Debug.Log("Multiple Choice Listeners Added");
         }
-        UpdateUI(1,currentQuest,audioDelay);
+        Debug.Log("Updating UI");
+        //StartCoroutine(UpdateUI(1,currentQuest,audioDelay));
+        //qAPanel.SetActive(true);
+        Debug.Log("UI Finished Updating");
     }
 
     void CheckAnswer(int choice) {
