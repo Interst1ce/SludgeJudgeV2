@@ -14,9 +14,12 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField]
     TextMeshProUGUI chapterTitle;
 
+    public static bool paused = false;
+
     bool small = true;
 
     public void Pause() {
+        paused = !paused;
         foreach (GameObject gameObject in toToggle) {
             if (gameObject.name == "ChapterTitle") {
                 chapterTitle = gameObject.GetComponentInChildren<TextMeshProUGUI>();

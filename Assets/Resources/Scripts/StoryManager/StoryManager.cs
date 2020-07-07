@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using GoogleARCore.Examples.Common;
+using UnityEngine.EventSystems;
 
 #if UNITY_EDITOR
 using Input = GoogleARCore.InstantPreviewInput;
@@ -149,7 +150,7 @@ public class StoryManager : MonoBehaviour {
 
 
         for (var i = 0; i < Input.touchCount; ++i) {
-            if (Input.GetTouch(i).phase == TouchPhase.Began) {
+            if (Input.GetTouch(i).phase == TouchPhase.Began && !QuestionManagerV2_1.inQuestion && !PauseMenu.paused) {
                 //call coroutine that detects swipe
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
                 RaycastHit hit;
@@ -184,6 +185,9 @@ public class StoryManager : MonoBehaviour {
                                 if (target.targetAnim != null) {
                                     //play the animation for the step
                                     Animator animator = hit.transform.gameObject.GetComponent<Animator>();
+                                    if(animator == null) {
+                                        animator = hit.transform.GetComponentInParent<Animator>();
+                                    }
                                     lastStepAnim = animator;
                                     lastAnimName = target.targetAnim.name;
                                     if (animator != null) {
