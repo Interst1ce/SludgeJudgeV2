@@ -3036,7 +3036,7 @@ PrefabInstance:
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: steps.Array.data[3].otherFunctions.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -3106,7 +3106,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[5].targets.Array.data[0].targetAnim
       value: 
-      objectReference: {fileID: 1615023158368410693, guid: 7c6cce7e9533f56449dbb86c3c43a0e4,
+      objectReference: {fileID: -998496362607748373, guid: 9c27b561ec4ae9649a44c71135f8ebe7,
         type: 3}
     - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
@@ -3422,7 +3422,17 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[3].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 620138073}
+      objectReference: {fileID: 620138080}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[3].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShadowToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073097892373886357, guid: 696dddd712bb6264495cccffdc4dfc7c,
+        type: 3}
+      propertyPath: steps.Array.data[3].otherFunctions.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4073097892373886361, guid: 696dddd712bb6264495cccffdc4dfc7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3580,6 +3590,19 @@ MonoBehaviour:
   buttonSound: {fileID: 8300000, guid: 9226f0684031e79408b41bcb3ecc7fdc, type: 3}
   correctSound: {fileID: 8300000, guid: 6809391a6f8e4614e8a66dae80224b1a, type: 3}
   incorrectSound: {fileID: 8300000, guid: 7916aec82a2cfd94c95033d89f140e3b, type: 3}
+--- !u!114 &620138080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620138073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02efe2a5674bc64f940340afb355966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sludgeJudge: {fileID: 1675271428}
 --- !u!1 &638789397
 GameObject:
   m_ObjectHideFlags: 0

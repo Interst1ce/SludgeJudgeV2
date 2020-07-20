@@ -8,9 +8,9 @@ using TMPro;
 public class MainMenu : MonoBehaviour {
 
     TextMeshProUGUI[] chapterTitles = new TextMeshProUGUI[3];
-    TextMeshProUGUI[] chapterSummaries = new TextMeshProUGUI[3];
+    //TextMeshProUGUI[] chapterSummaries = new TextMeshProUGUI[3];
 
-    Image[] chapterIcons = new Image[3];
+    //Image[] chapterIcons = new Image[3];
     Image[] moduleIcons = new Image[3];
 
     GameObject moreChapters;
@@ -32,15 +32,15 @@ public class MainMenu : MonoBehaviour {
         chapterTitles[0] = GameObject.Find("Chapter1/ChapterTitle").GetComponent<TextMeshProUGUI>();
         chapterTitles[1] = GameObject.Find("Chapter2/ChapterTitle").GetComponent<TextMeshProUGUI>();
         chapterTitles[2] = GameObject.Find("Chapter3/ChapterTitle").GetComponent<TextMeshProUGUI>();
-        chapterSummaries[0] = GameObject.Find("Chapter1/ChapterSummary").GetComponent<TextMeshProUGUI>();
-        chapterSummaries[1] = GameObject.Find("Chapter2/ChapterSummary").GetComponent<TextMeshProUGUI>();
-        chapterSummaries[2] = GameObject.Find("Chapter3/ChapterSummary").GetComponent<TextMeshProUGUI>();
+        //chapterSummaries[0] = GameObject.Find("Chapter1/ChapterSummary").GetComponent<TextMeshProUGUI>();
+        //chapterSummaries[1] = GameObject.Find("Chapter2/ChapterSummary").GetComponent<TextMeshProUGUI>();
+        //chapterSummaries[2] = GameObject.Find("Chapter3/ChapterSummary").GetComponent<TextMeshProUGUI>();
         moreChapters = GameObject.Find("MoreChapters");
         prevChapters = GameObject.Find("BackChapters");
         eventManager = GameObject.Find("EventSystem");
-        chapterIcons[0] = GameObject.Find("Chapter1/ChapterIcon").GetComponent<Image>();
-        chapterIcons[1] = GameObject.Find("Chapter2/ChapterIcon").GetComponent<Image>();
-        chapterIcons[2] = GameObject.Find("Chapter3/ChapterIcon").GetComponent<Image>();
+        //chapterIcons[0] = GameObject.Find("Chapter1/ChapterIcon").GetComponent<Image>();
+        //chapterIcons[1] = GameObject.Find("Chapter2/ChapterIcon").GetComponent<Image>();
+        //chapterIcons[2] = GameObject.Find("Chapter3/ChapterIcon").GetComponent<Image>();
         moduleIcons[0] = GameObject.Find("TopModule/ModuleIcon").GetComponent<Image>();
         moduleIcons[1] = GameObject.Find("MiddleModule/ModuleIcon").GetComponent<Image>();
         moduleIcons[2] = GameObject.Find("BottomModule/ModuleIcon").GetComponent<Image>();
@@ -112,8 +112,8 @@ public class MainMenu : MonoBehaviour {
         while(dTime < time) {
             for(int i = 0; i < chapterTitles.Length; i++) {
                 chapterTitles[i].color = new Color(color.r,color.g,color.b,Mathf.Lerp(chapterTitles[i].color.a,0,(dTime / time)));
-                chapterSummaries[i].color = new Color(color.r,color.g,color.b,Mathf.Lerp(chapterSummaries[i].color.a,0,(dTime / time)));
-                chapterIcons[i].color = new Color(0.3176471f,0.3176471f,0.3176471f,Mathf.Lerp(chapterIcons[i].color.a,0,(dTime / time)));
+                //chapterSummaries[i].color = new Color(color.r,color.g,color.b,Mathf.Lerp(chapterSummaries[i].color.a,0,(dTime / time)));
+                //chapterIcons[i].color = new Color(0.3176471f,0.3176471f,0.3176471f,Mathf.Lerp(chapterIcons[i].color.a,0,(dTime / time)));
             }
 
             //update elapsed time
@@ -123,8 +123,8 @@ public class MainMenu : MonoBehaviour {
 
         for (int i = 0; i < chapterTitles.Length; i++) {
             chapterTitles[i].color = new Color(color.r,color.g,color.b,0);
-            chapterSummaries[i].color = new Color(color.r,color.g,color.b,0);
-            chapterIcons[i].color = new Color(0.3176471f,0.3176471f,0.3176471f,0);
+            //chapterSummaries[i].color = new Color(color.r,color.g,color.b,0);
+            //chapterIcons[i].color = new Color(0.3176471f,0.3176471f,0.3176471f,0);
         }
         #endregion
 
@@ -140,40 +140,40 @@ public class MainMenu : MonoBehaviour {
             int transIndex = lowIndex - upIndex;
             buttons[transIndex].interactable = true;
             chapterTitles[transIndex].text = modChaps[lowIndex].chapterTitle;
-            chapterSummaries[transIndex].text = modChaps[lowIndex].chapterSummary;
-            chapterIcons[transIndex].sprite = modChaps[lowIndex].chapterIcon;
+            //chapterSummaries[transIndex].text = modChaps[lowIndex].chapterSummary;
+            //chapterIcons[transIndex].sprite = modChaps[lowIndex].chapterIcon;
             for(int i = transIndex + 1; i < transIndex + 3; i++) {
                 Debug.Log("" + i);
                 chapterTitles[i].text = "";
-                chapterSummaries[i].text = "";
-                chapterIcons[i].sprite = null;
+                //chapterSummaries[i].text = "";
+                //chapterIcons[i].sprite = null;
             }
         } else {
             for (int i = lowIndex; i < upIndex + 1; i++) {
                 buttons[i - lowIndex].interactable = true;
                 if(i != upIndex + 1) {
                     chapterTitles[i - lowIndex].text = modChaps[i].chapterTitle;
-                    chapterSummaries[i - lowIndex].text = modChaps[i].chapterSummary;
-                    chapterIcons[i - lowIndex].sprite = modChaps[i].chapterIcon;
+                    //chapterSummaries[i - lowIndex].text = modChaps[i].chapterSummary;
+                    //chapterIcons[i - lowIndex].sprite = modChaps[i].chapterIcon;
                 } else {
                     chapterTitles[i - lowIndex].text = modChaps[i - 1].chapterTitle;
-                    chapterSummaries[i - lowIndex].text = modChaps[i - 1].chapterSummary;
-                    chapterIcons[i - lowIndex].sprite = modChaps[i - 1].chapterIcon;
+                    //chapterSummaries[i - lowIndex].text = modChaps[i - 1].chapterSummary;
+                    //chapterIcons[i - lowIndex].sprite = modChaps[i - 1].chapterIcon;
                 } 
             }
         }
         if(upIndex < 2) {
             for(int i = upIndex + 1; i < 3; i++) {
                 chapterTitles[i].text = "";
-                chapterSummaries[i].text = "";
-                chapterIcons[i].sprite = null;
+                //chapterSummaries[i].text = "";
+                //chapterIcons[i].sprite = null;
             }
         } else if(upIndex > modChaps.Capacity) {        //I don't know if it ever actually gets to this block
             for(int i = upIndex; i > modChaps.Capacity - 1; i--) {
                 Debug.Log("" + (i - modChaps.Capacity - 1));
                 chapterTitles[i - modChaps.Capacity - 1].text = "";
-                chapterSummaries[i - modChaps.Capacity - 1].text = "";
-                chapterIcons[i - modChaps.Capacity - 1].sprite = null;
+                //chapterSummaries[i - modChaps.Capacity - 1].text = "";
+                //chapterIcons[i - modChaps.Capacity - 1].sprite = null;
             }
         }
         #endregion
@@ -184,25 +184,25 @@ public class MainMenu : MonoBehaviour {
             foreach (TextMeshProUGUI elem in chapterTitles) {
                 elem.color = new Color(color.r,color.g,color.b,Mathf.Lerp(color.a,1,dTime / time));
             }
-            foreach (TextMeshProUGUI elem in chapterSummaries) {
+            /*foreach (TextMeshProUGUI elem in chapterSummaries) {
                 elem.color = new Color(color.r,color.g,color.b,Mathf.Lerp(color.a,1,dTime / time));
-            }
+            }*/
             //fade each sprite element from list back in from the hard coded value to an alpha of 1
-            foreach (Image elem in chapterIcons) {
+            /*foreach (Image elem in chapterIcons) {
                 elem.color = new Color(0.3176471f,0.3176471f,0.3176471f,Mathf.Lerp(color.a,1,dTime / time));
-            }
+            }*/
             dTime += Time.deltaTime;
             yield return null;
         }
         foreach (TextMeshProUGUI elem in chapterTitles) {
             elem.color = new Color(color.r,color.g,color.b,1);
         }
-        foreach (TextMeshProUGUI elem in chapterSummaries) {
+        /*foreach (TextMeshProUGUI elem in chapterSummaries) {
             elem.color = new Color(color.r,color.g,color.b,1);
-        }
-        foreach (Image elem in chapterIcons) {
+        }*/
+        /*foreach (Image elem in chapterIcons) {
             elem.color = new Color(0.3176471f,0.3176471f,0.3176471f,1);
-        }
+        }*/
         #endregion
     }
 }

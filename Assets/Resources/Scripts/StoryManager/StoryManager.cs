@@ -45,15 +45,19 @@ public class StoryManager : MonoBehaviour {
     private bool init = false;
     public int pauseDelay = 0;
     [SerializeField]
-    public AudioClip introAudio;
+    AudioClip introAudio;
     [SerializeField]
-    public AudioClip outroAudio;
+    AudioClip outroAudio;
     [SerializeField]
-    public AudioClip missTapAudio;
+    AudioClip missTapAudio;
     [SerializeField]
-    public SoundEffect backgroundAudioStart;
+    SoundEffect backgroundAudioStart;
     [HideInInspector]
-    public SwipeDirection swipeDir;
+    SwipeDirection swipeDir;
+    [SerializeField]
+    bool reviewMode = false;
+    [SerializeField]
+    AudioClip silence;
 
     //[SerializeField]
     //public GameObject slider;
@@ -199,12 +203,12 @@ public class StoryManager : MonoBehaviour {
                                         hit.transform.gameObject.GetComponentInParent<Animator>().Play(target.targetAnim.name);
                                     }
                                 }
-                                if (target.targetAudio != null) {
+                                if (target.targetAudio != null && !reviewMode) {
                                     //play audio for the step
                                     PlayAudio(target.targetAudio);
                                     glowDelay = target.targetAudio.length;
                                     QuestionManagerV2.audioDelay = glowDelay;
-                                }
+                                } else PlayAudio(silence);
                                 /*if (elem.soundEffects != null) {
                                     PlaySoundEffects(elem.soundEffects);
                                 }
@@ -243,12 +247,14 @@ public class StoryManager : MonoBehaviour {
                             }
                         }
                     }
-                    glow = steps[currentStep].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
-                    if (glow != null) {
-                        lastGlow = StartCoroutine(GlowAfterDelay(glow,glowDelay));
-                    } else {
-                        GlowObjectCmd[] glows = steps[currentStep].targets[0].objectTarget.GetComponentsInChildren<GlowObjectCmd>();
-                        foreach (GlowObjectCmd childGlow in glows) StartCoroutine(GlowAfterDelay(childGlow,glowDelay));
+                    if (!reviewMode) {
+                        glow = steps[currentStep].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
+                        if (glow != null) {
+                            lastGlow = StartCoroutine(GlowAfterDelay(glow,glowDelay));
+                        } else {
+                            GlowObjectCmd[] glows = steps[currentStep].targets[0].objectTarget.GetComponentsInChildren<GlowObjectCmd>();
+                            foreach (GlowObjectCmd childGlow in glows) StartCoroutine(GlowAfterDelay(childGlow,glowDelay));
+                        }
                     }
                 }
             }

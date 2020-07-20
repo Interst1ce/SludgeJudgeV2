@@ -17,3 +17,7 @@ MonoBehaviour:
     chapterSummary: Learn the process of using a pH meter
     chapterIcon: {fileID: 21300000, guid: b897b2820a7bf8d4aa272968b1ab6d3d, type: 3}
     chapterScene: 3
+  - chapterTitle: Review
+    chapterSummary: 
+    chapterIcon: {fileID: 21300000, guid: b897b2820a7bf8d4aa272968b1ab6d3d, type: 3}
+    chapterScene: 4

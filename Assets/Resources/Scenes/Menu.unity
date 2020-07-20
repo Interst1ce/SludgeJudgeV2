@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -252,6 +253,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1334,6 +1336,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1571,6 +1574,51 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_text
+      value: Chloramination
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210444, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457011210445, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60
+      objectReference: {fileID: 0}
     - target: {fileID: 2316316457051178002, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
       propertyPath: m_Sprite
@@ -1668,6 +1716,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 848ae9b1f4d47c14e81940e2b7d3c079,
         type: 3}
+    - target: {fileID: 2316316457434865455, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2316316457491903059, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1700,6 +1753,56 @@ PrefabInstance:
       propertyPath: m_textInfo.spaceCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_text
+      value: pH Testing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669724, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457794669725, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60
+      objectReference: {fileID: 0}
     - target: {fileID: 2316316457890024427, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1724,6 +1827,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Chloramination
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457890024427, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457890024427, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 0.005432129
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457890024429, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2316316457913225516, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
@@ -1761,6 +1879,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b897b2820a7bf8d4aa272968b1ab6d3d,
         type: 3}
+    - target: {fileID: 2316316457913642042, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2316316457923095931, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1790,6 +1913,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Sludge Judge
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457923095931, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.61087036
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457923095931, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316457923095933, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2316316457985533326, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
@@ -1861,6 +1999,56 @@ PrefabInstance:
     - target: {fileID: 2316316458054856781, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171520, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_text
+      value: Sludge Judge
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458438171535, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2316316458525458142, guid: 4aad65db751f9bb4f9037d0256154d6a,
@@ -1922,6 +2110,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.spaceCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458635695785, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458635695785, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 3.9225159
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316316458635695787, guid: 4aad65db751f9bb4f9037d0256154d6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2316316458763412417, guid: 4aad65db751f9bb4f9037d0256154d6a,
         type: 3}
@@ -2030,6 +2233,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
