@@ -16,4 +16,4 @@ MonoBehaviour:
   - chapterTitle: Walkthrough
     chapterSummary: Learn the process of chloramination
     chapterIcon: {fileID: 21300000, guid: 848ae9b1f4d47c14e81940e2b7d3c079, type: 3}
-    chapterScene: 0
+    chapterScene: 5
