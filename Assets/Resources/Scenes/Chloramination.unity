@@ -150,8 +150,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
-      propertyPath: steps.Array.size
-      value: 5
+      propertyPath: steps.Array.data[0].targets.Array.data[0].targetAnim
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3708785095353379234, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
