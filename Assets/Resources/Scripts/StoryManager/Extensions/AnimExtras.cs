@@ -17,6 +17,25 @@ public class AnimExtras : MonoBehaviour {
         }
     }
 
+    public void PlayMultiAnim(MultiAnimDelay multiAnim) {
+        foreach(AnimDataDelay anim in multiAnim.multiAnims) {
+            GameObject target = GameObject.Find(anim.targetObjPath);
+            Animator anmat = target.GetComponent<Animator>();
+            if(anmat != null) {
+                StartCoroutine(MultiAnimDelay(anmat, anim));
+            }
+        }
+    }
+
+    IEnumerator MultiAnimDelay(Animator anmat, AnimDataDelay anim) {
+        float t = 0;
+        while (t < anim.delay) {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        anmat.Play(anim.animTitle);
+    }
+
     public void PlayMultiAnim(MultiAnimTrigger multiAnim) {
         foreach (animTriggerData anim in multiAnim.multiAnims) {
             GameObject target = GameObject.Find(anim.targetObjPath);

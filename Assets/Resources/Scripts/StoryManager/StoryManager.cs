@@ -152,9 +152,6 @@ public class StoryManager : MonoBehaviour {
             }
         }
 
-        Debug.Log("" + QuestionManagerV2_1.inQuestion);
-        Debug.Log("" + PauseMenu.paused);
-
         for (var i = 0; i < Input.touchCount; ++i) {
             if (Input.GetTouch(i).phase == TouchPhase.Began && (!QuestionManagerV2_1.inQuestion && !PauseMenu.paused)) {
                 //call coroutine that detects swipe
