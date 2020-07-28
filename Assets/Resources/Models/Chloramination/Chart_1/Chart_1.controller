@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Chlorine_Residual
+  m_Name: Chlorine Residual
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 3da1c11fcc2413c468ad4e69bfe956b4,
+  m_Motion: {fileID: 1827226128182048838, guid: c2f089c70627c9d40ae2f3bb1cbab46f,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
