@@ -1,32 +1,12 @@
 fileFormatVersion: 2
-guid: 31afbc18ac6d6d74fba381411bd0934a
+guid: d90b19b0d2fea4c48845a9815fe6172a
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
     second: MoleculeAssembly
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 03 - Default
-    second: {fileID: 2100000, guid: 5e166f36bc15d50458c554d16dcc7469, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 04 - Default
-    second: {fileID: 2100000, guid: 9e0aca5a8ddb61b448554e8698b4ebc3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #0
-    second: {fileID: 2100000, guid: 28362090bc7a9a84ba77365f5fb94d0b, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: N_H_Cl
-    second: {fileID: 2800000, guid: 7a6d2837ee4f12b4caf4e518625f0c2d, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -58,7 +38,7 @@ ModelImporter:
       name: MoleculeAssembly
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
+      firstFrame: -50
       lastFrame: 1710
       wrapMode: 0
       orientationOffsetY: 0
@@ -95,7 +75,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

@@ -16,3 +16,6 @@ MonoBehaviour:
   - targetObjPath: Ammonia_to_Mono_di_tri_chloramine
     animTitle: MoleculeAssembly
     delay: 36.667
+  - targetObjPath: Chloramination_Graph_2_7
+    animTitle: UnShrink
+    delay: 95
