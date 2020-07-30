@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/V2SludgeJudgeSampling.unity
     guid: e37de41c9cf5d9f4393cb526a9c06dc6
   - enabled: 1
-    path: Assets/Resources/Scenes/Titrator.unity
-    guid: a1672bc7d7d6d4546854a10226ca4d8b
+    path: Assets/Resources/Scenes/Titration.unity
+    guid: 86fccbf5bd6ea234fb5b0ba10e1d7701
   - enabled: 1
     path: Assets/Resources/Scenes/pHTesting.unity
     guid: 958dcf4367fe2654fb6c3806c95c0ab3
