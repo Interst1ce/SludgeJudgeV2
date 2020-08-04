@@ -196,8 +196,13 @@ public class StoryManager : MonoBehaviour {
                                     if (animator != null) {
                                         animator.Play(target.targetAnim.name);
                                     } else {
-                                        //allows for selecting a level 1 child for the object target
-                                        hit.transform.gameObject.GetComponentInParent<Animator>().Play(target.targetAnim.name);
+                                        //allows for selecting up to a level 2 child for the object target
+                                        Animator parentAnmat = hit.transform.gameObject.GetComponentInParent<Animator>();
+                                        if (parentAnmat != null) {
+                                            parentAnmat.Play(target.targetAnim.name);
+                                        } else {
+                                            hit.transform.gameObject.transform.parent.GetComponentInParent<Animator>().Play(target.targetAnim.name);
+                                        }
                                     }
                                 }
                                 if (target.targetAudio != null && !reviewMode) {
