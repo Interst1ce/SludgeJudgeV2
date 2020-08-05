@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Chloramination
   m_EditorClassIdentifier: 
   chapters:
-  - chapterTitle: Walkthrough
+  - chapterTitle: Introduction
     chapterSummary: Learn the process of chloramination
     chapterIcon: {fileID: 21300000, guid: 848ae9b1f4d47c14e81940e2b7d3c079, type: 3}
     chapterScene: 5
+  - chapterTitle: Titration
+    chapterSummary: Learn the process of chloramination
+    chapterIcon: {fileID: 21300000, guid: 848ae9b1f4d47c14e81940e2b7d3c079, type: 3}
+    chapterScene: 2

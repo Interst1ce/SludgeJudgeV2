@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TitrationClipboard
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: clipBoardAnimation1
+  - targetObjPath: clipBoardAnimation3
     animTitle: MovePosition
-    delay: 35
-  - targetObjPath: clipBoardAnimation1
+    delay: 5
+  - targetObjPath: clipBoardAnimation3
     animTitle: MovePositionReverse
-    delay: 45
+    delay: 15
