@@ -714,7 +714,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[1].targets.Array.data[0].targetAudio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 68675203b7d0e25478bd7af9157d9921, type: 3}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[1].otherFunctions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -771,7 +771,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[2].targets.Array.data[0].targetAudio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 210ef0140142e09478c12b17b34a3a02, type: 3}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[3].targets.Array.data[0].objectTarget
@@ -787,7 +787,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[3].targets.Array.data[0].targetAudio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 962508015b6ee8143aa822c6f781a3d3, type: 3}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[0].targets.Array.data[0].targetStep
@@ -862,7 +862,7 @@ PrefabInstance:
         type: 3}
       propertyPath: introAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 7916aec82a2cfd94c95033d89f140e3b, type: 3}
+      objectReference: {fileID: 8300000, guid: f8390e0238e1f20449fc3fe5dc2c4a87, type: 3}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[4].targets.Array.data[0].objectTarget
@@ -991,6 +991,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -300241581926139445, guid: 041131008ddc83b4087154c33fb27b84,
         type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[4].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: b2752926646c39e4fa15bce8a9059d58, type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[5].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a441b6442baf833479aeda2e9521a9a4, type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[6].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 23a3513cf0f11b54596ecc168f11490a, type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[7].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d053ca6a3176f34c86158fd46745644, type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[8].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 40976bddc4654074090e8000b3274378, type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[9].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0690e34f22daf5242972208a741998cb, type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[10].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 1aa0c95cdee98b941a340e8219687232, type: 3}
+    - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
+        type: 3}
+      propertyPath: steps.Array.data[11].targets.Array.data[0].targetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: be8013d091fe6a640984c76e613c0cdd, type: 3}
     - target: {fileID: 3708785095353379234, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: m_LocalPosition.y
