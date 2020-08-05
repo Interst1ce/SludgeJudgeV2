@@ -362,7 +362,7 @@ ModelImporter:
       takeName: Take 001
       internalID: 0
       firstFrame: 900
-      lastFrame: 1500
+      lastFrame: 1400
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -390,7 +390,7 @@ ModelImporter:
       name: Titrate_2
       takeName: Take 001
       internalID: 0
-      firstFrame: 1500
+      firstFrame: 1400
       lastFrame: 1700
       wrapMode: 0
       orientationOffsetY: 0
