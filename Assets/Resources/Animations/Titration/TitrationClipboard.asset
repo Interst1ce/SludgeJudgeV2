@@ -15,4 +15,7 @@ MonoBehaviour:
   multiAnims:
   - targetObjPath: clipBoardAnimation1
     animTitle: MovePosition
-    delay: 0
+    delay: 35
+  - targetObjPath: clipBoardAnimation1
+    animTitle: MovePositionReverse
+    delay: 45
