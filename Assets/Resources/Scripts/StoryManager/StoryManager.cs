@@ -147,8 +147,9 @@ public class StoryManager : MonoBehaviour {
             }
         }
         if (!audioSource.isPlaying && introPlayed && currentStep == 0) {
-            if (steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>() != null) {
-                steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>().StartCoroutine("GlowPulse");
+            glow = steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
+            if (glow != null) {
+                lastGlow = glow.StartCoroutine("GlowPulse");
             }
         }
 
