@@ -124,6 +124,7 @@ public class StoryManager : MonoBehaviour {
 
     public void Start() {
         //move this to play intro audio when the marker first comes into view
+        currentStep = 0;
         AudioListener.pause = false;
     }
 

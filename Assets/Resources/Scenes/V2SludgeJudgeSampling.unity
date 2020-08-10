@@ -9199,12 +9199,12 @@ PrefabInstance:
     - target: {fileID: 601689832197397782, guid: 62a522116c99e334cb53ae0107a8029e,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 601689832197397782, guid: 62a522116c99e334cb53ae0107a8029e,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 787979768157799078, guid: 62a522116c99e334cb53ae0107a8029e,
         type: 3}

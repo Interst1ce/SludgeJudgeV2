@@ -18,6 +18,10 @@ public class PauseMenu : MonoBehaviour {
 
     bool small = true;
 
+    private void Awake() {
+        paused = false;
+    }
+
     public void Pause() {
         paused = !paused;
         foreach (GameObject gameObject in toToggle) {

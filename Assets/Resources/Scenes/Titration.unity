@@ -2259,6 +2259,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1067174875}
     m_Modifications:
+    - target: {fileID: 3065642350657649357, guid: ef4c06dac274178468671e5a30c8ae03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1848914518}
+    - target: {fileID: 3065642350657649357, guid: ef4c06dac274178468671e5a30c8ae03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ToggleSubMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065642350657649357, guid: ef4c06dac274178468671e5a30c8ae03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065642350657649357, guid: ef4c06dac274178468671e5a30c8ae03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4019613223292881471, guid: ef4c06dac274178468671e5a30c8ae03,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2398,6 +2418,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100487492350410659, guid: ef4c06dac274178468671e5a30c8ae03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1848914518}
+    - target: {fileID: 7100487492350410659, guid: ef4c06dac274178468671e5a30c8ae03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSubMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100487492350410659, guid: ef4c06dac274178468671e5a30c8ae03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8519260356884628133, guid: ef4c06dac274178468671e5a30c8ae03,
         type: 3}
@@ -2563,6 +2598,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1848914516}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1848914518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1816010646465743327, guid: e3515be5cc7c2ec4bbb524296990844a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1848914516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625166bae56ca3f4d929bd3c7f5d05b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1877360564
 GameObject:
   m_ObjectHideFlags: 0
