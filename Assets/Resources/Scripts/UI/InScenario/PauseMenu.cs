@@ -24,6 +24,9 @@ public class PauseMenu : MonoBehaviour {
 
     public void Pause() {
         paused = !paused;
+        if (Time.timeScale != 1) {
+            Time.timeScale = 1;
+        } else Time.timeScale = 0;
         foreach (GameObject gameObject in toToggle) {
             if (gameObject.name == "ChapterTitle") {
                 chapterTitle = gameObject.GetComponentInChildren<TextMeshProUGUI>();
