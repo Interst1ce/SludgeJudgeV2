@@ -8,20 +8,20 @@ public class ResizeScene : MonoBehaviour {
     [SerializeField]
     GameObject scene;
     float oldHeight;
-    float oldScale;
+    Vector3 oldScale;
 
     public void Init() {
         oldHeight = scene.transform.localPosition.y;
-        oldScale = scene.transform.localScale.x;
+        oldScale = scene.transform.localScale;
     }
 
     public void UpdateScale(float scaleMult) {
-        Vector3 newScale = new Vector3(1,1,1) * scaleMult;
+        Vector3 newScale = oldScale * scaleMult;
         scene.transform.localScale = newScale;
     }
 
     public void RevertScale(Slider slider) {
-        slider.value = oldScale;
+        slider.value = 1;
     }
 
     public void UpdateHeight(float height) {
