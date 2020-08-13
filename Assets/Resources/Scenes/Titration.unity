@@ -2457,6 +2457,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1655579686}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1655579688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8519260356884628133, guid: ef4c06dac274178468671e5a30c8ae03,
+    type: 3}
+  m_PrefabInstance: {fileID: 1655579686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813398661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163b2ced2b9ecd144a94e63c4cfde60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813398661 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5391354606694708211, guid: ef4c06dac274178468671e5a30c8ae03,
@@ -2485,6 +2497,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6647825898508392430, guid: e3515be5cc7c2ec4bbb524296990844a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1655579688}
     - target: {fileID: 8350884585525758968, guid: e3515be5cc7c2ec4bbb524296990844a,
         type: 3}
       propertyPath: m_LocalPosition.x
