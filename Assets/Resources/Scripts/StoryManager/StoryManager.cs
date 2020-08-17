@@ -365,10 +365,19 @@ public class StoryManager : MonoBehaviour {
 
     public void PlayIntro() {
         if (!introPlayed) {
-            introPlayed = true;
             PlayAudio(introAudio);
+            IntroTimer(introAudio.length);
             //PlaySoundEffects(backgroundAudioStart);
         }
+    }
+
+    IEnumerator IntroTimer(float time) {
+        float t = 0;
+        while (t < time) {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        introPlayed = true;
     }
 
     //UPDATE TO WORK WITH MULTIPLE TARGETS
