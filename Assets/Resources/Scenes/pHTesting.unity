@@ -4176,7 +4176,7 @@ PrefabInstance:
         type: 3}
       propertyPath: steps.Array.data[2].targets.Array.data[0].targetAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 4a7cdb17287379343b21cd7aa9933e2e, type: 3}
+      objectReference: {fileID: 8300000, guid: d8eb66a3dc5147840948b28fc6e487a0, type: 3}
     - target: {fileID: 3708637776802717151, guid: a579828f8802aca4882cee7bb8c23e9d,
         type: 3}
       propertyPath: steps.Array.data[3].targets.Array.data[0].targetAudio
