@@ -136,11 +136,14 @@ public class StoryManager : MonoBehaviour {
     private GlowObjectCmd glow;
 
     public void Update() {
+        Animator lastStepAnim = null;
+        String lastAnimName = "";
+
         if (currentStep == steps.Count && !audioSource.isPlaying && finished == false /*&& !qAPanel.activeSelf*/) {
             finished = true;
             if (outroAudio != null) {
                 PlayAudio(outroAudio);
-                if (!audioSource.isPlaying) {
+                if (!audioSource.isPlaying && lastStepAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !lastStepAnim.IsInTransition(0)) {
                     CallPause();
                 }
             } else {
@@ -166,8 +169,6 @@ public class StoryManager : MonoBehaviour {
                 if (Physics.Raycast(ray,out hit)) {
                     //GameObject.Find("TextMeshPro Text").GetComponent<TextMeshProUGUI>().text = hit.transform.gameObject.name;
 
-                    Animator lastStepAnim = null;
-                    String lastAnimName = "";
                     float glowDelay = 0;
 
                     foreach (Step elem in steps) {
