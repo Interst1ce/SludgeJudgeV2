@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SJ_Step1_MultiAnim
   m_EditorClassIdentifier: 
   multiAnims:
-  - targetObjPath: Sludge_Judge_1
+  - targetObjPath: Sludge_Judge_Breakdown_Animation_3
     animTitle: Fill SJ

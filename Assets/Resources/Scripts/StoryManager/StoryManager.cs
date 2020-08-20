@@ -147,10 +147,14 @@ public class StoryManager : MonoBehaviour {
                 StartCoroutine(PauseAfterDelay(pauseDelay));
             }
         }
-        if (!audioSource.isPlaying && introPlayed && currentStep == 0) {
+        if (!audioSource.isPlaying && introPlayed && currentStep == 0 && lastGlow == null) {
+            Debug.Log("Intro audio ended, starting first glow pulse");
             glow = steps[0].targets[0].objectTarget.GetComponent<GlowObjectCmd>();
+            Debug.Log("Got glow components");
             if (glow != null) {
+                Debug.Log("Starting glow pulse");
                 lastGlow = glow.StartCoroutine("GlowPulse");
+                Debug.Log("Glow pulse started");
             }
         }
 
@@ -364,20 +368,18 @@ public class StoryManager : MonoBehaviour {
     }
 
     public void PlayIntro() {
+        Debug.Log("Playing intro");
         if (!introPlayed) {
             PlayAudio(introAudio);
-            IntroTimer(introAudio.length);
+            StartCoroutine(IntroTimer(introAudio.length));
             //PlaySoundEffects(backgroundAudioStart);
         }
     }
 
     IEnumerator IntroTimer(float time) {
-        float t = 0;
-        while (t < time) {
-            t += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSecondsRealtime(time);
         introPlayed = true;
+        Debug.Log("Intro finished playing");
     }
 
     //UPDATE TO WORK WITH MULTIPLE TARGETS
